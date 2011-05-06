@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		355272B710E334B100194344 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 355272AD10E334B100194344 /* ASIFormDataRequest.m */; };
-		355272B810E334B100194344 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 355272AF10E334B100194344 /* ASIHTTPRequest.m */; };
-		355272B910E334B100194344 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 355272B210E334B100194344 /* ASIInputStream.m */; };
-		355272BA10E334B100194344 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 355272B410E334B100194344 /* ASINetworkQueue.m */; };
-		355272BB10E334B100194344 /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 355272B610E334B100194344 /* ASINSStringAdditions.m */; };
+		15E6D36613730AF30037D2D7 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D34D13730AF30037D2D7 /* NSData+Base64.m */; };
+		15E6D36713730AF30037D2D7 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D34F13730AF30037D2D7 /* OAuth+Additions.m */; };
+		15E6D36813730AF30037D2D7 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D35113730AF30037D2D7 /* OAuthCore.m */; };
 		355272C310E3354E00194344 /* QSTwitterPrefPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 355272C210E3354E00194344 /* QSTwitterPrefPane.nib */; };
 		355272DD10E33BD600194344 /* QSTwitter2.icns in Resources */ = {isa = PBXBuildFile; fileRef = 355272DC10E33BD600194344 /* QSTwitter2.icns */; };
 		35857B4010E200550054319B /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 35857B3510E200550054319B /* NSObject+SBJSON.m */; };
@@ -33,19 +31,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		154F2D561374451300AA8175 /* ConsumerKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerKey.h; sourceTree = "<group>"; };
+		15E6D34C13730AF30037D2D7 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		15E6D34D13730AF30037D2D7 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		15E6D34E13730AF30037D2D7 /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
+		15E6D34F13730AF30037D2D7 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
+		15E6D35013730AF30037D2D7 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
+		15E6D35113730AF30037D2D7 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
 		32DBCF980370C29C00C91783 /* QSTwitter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTwitter_Prefix.pch; sourceTree = "<group>"; };
-		355272AB10E334B100194344 /* ASI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASI.h; sourceTree = "<group>"; };
-		355272AC10E334B100194344 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
-		355272AD10E334B100194344 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
-		355272AE10E334B100194344 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
-		355272AF10E334B100194344 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
-		355272B010E334B100194344 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
-		355272B110E334B100194344 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
-		355272B210E334B100194344 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
-		355272B310E334B100194344 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
-		355272B410E334B100194344 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
-		355272B510E334B100194344 /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINSStringAdditions.h; sourceTree = "<group>"; };
-		355272B610E334B100194344 /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINSStringAdditions.m; sourceTree = "<group>"; };
 		355272C210E3354E00194344 /* QSTwitterPrefPane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = QSTwitterPrefPane.nib; sourceTree = "<group>"; };
 		355272DC10E33BD600194344 /* QSTwitter2.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QSTwitter2.icns; sourceTree = "<group>"; };
 		35857B3310E200550054319B /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -123,6 +116,19 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		15E6D33313730AF30037D2D7 /* OAuthCore */ = {
+			isa = PBXGroup;
+			children = (
+				15E6D34C13730AF30037D2D7 /* NSData+Base64.h */,
+				15E6D34D13730AF30037D2D7 /* NSData+Base64.m */,
+				15E6D34E13730AF30037D2D7 /* OAuth+Additions.h */,
+				15E6D34F13730AF30037D2D7 /* OAuth+Additions.m */,
+				15E6D35013730AF30037D2D7 /* OAuthCore.h */,
+				15E6D35113730AF30037D2D7 /* OAuthCore.m */,
+			);
+			path = OAuthCore;
+			sourceTree = "<group>";
+		};
 		1ED78706FE9D4A0611CA0C5A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +162,7 @@
 				E1EAB045068128A200774DFF /* Twitter.m */,
 				BBF581820B1D9DC3003CFF55 /* TwitterSource.h */,
 				BBF581830B1D9DC3003CFF55 /* TwitterSource.m */,
+				154F2D561374451300AA8175 /* ConsumerKey.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -163,30 +170,11 @@
 		32DBCF9F0370C38200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				355272AA10E334B100194344 /* ASIHTTP */,
+				15E6D33313730AF30037D2D7 /* OAuthCore */,
 				35857B3210E200550054319B /* JSON */,
 				32DBCF980370C29C00C91783 /* QSTwitter_Prefix.pch */,
 			);
 			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		355272AA10E334B100194344 /* ASIHTTP */ = {
-			isa = PBXGroup;
-			children = (
-				355272AB10E334B100194344 /* ASI.h */,
-				355272AC10E334B100194344 /* ASIFormDataRequest.h */,
-				355272AD10E334B100194344 /* ASIFormDataRequest.m */,
-				355272AE10E334B100194344 /* ASIHTTPRequest.h */,
-				355272AF10E334B100194344 /* ASIHTTPRequest.m */,
-				355272B010E334B100194344 /* ASIHTTPRequestConfig.h */,
-				355272B110E334B100194344 /* ASIInputStream.h */,
-				355272B210E334B100194344 /* ASIInputStream.m */,
-				355272B310E334B100194344 /* ASINetworkQueue.h */,
-				355272B410E334B100194344 /* ASINetworkQueue.m */,
-				355272B510E334B100194344 /* ASINSStringAdditions.h */,
-				355272B610E334B100194344 /* ASINSStringAdditions.m */,
-			);
-			path = ASIHTTP;
 			sourceTree = "<group>";
 		};
 		35857B3210E200550054319B /* JSON */ = {
@@ -247,7 +235,11 @@
 			isa = PBXProject;
 			buildConfigurationList = 7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "QSTwitter" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0259C574FE90428111CA0C5A /* Twitter */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,11 +291,9 @@
 				35857B4310E200550054319B /* SBJsonBase.m in Sources */,
 				35857B4410E200550054319B /* SBJsonParser.m in Sources */,
 				35857B4510E200550054319B /* SBJsonWriter.m in Sources */,
-				355272B710E334B100194344 /* ASIFormDataRequest.m in Sources */,
-				355272B810E334B100194344 /* ASIHTTPRequest.m in Sources */,
-				355272B910E334B100194344 /* ASIInputStream.m in Sources */,
-				355272BA10E334B100194344 /* ASINetworkQueue.m in Sources */,
-				355272BB10E334B100194344 /* ASINSStringAdditions.m in Sources */,
+				15E6D36613730AF30037D2D7 /* NSData+Base64.m in Sources */,
+				15E6D36713730AF30037D2D7 /* OAuth+Additions.m in Sources */,
+				15E6D36813730AF30037D2D7 /* OAuthCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

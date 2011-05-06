@@ -6,14 +6,17 @@
 
 #import "TwitterAction.h"
 #import "JSON.h"
-#import "ASI.h"
 #import <QSCore/QSTextProxy.h>
 #import <QSCore/QSNotifyMediator.h>
+
+#import "OAuthCore.h"
+#import "OAuth+Additions.h"
+#import "ConsumerKey.h"
 
 void TwitterNotify(NSString *message)
 {
   QSShowNotifierWithAttributes(
-        [NSDictionary dictionaryWithObjectsAndKeys:@"Quick Silver Twitter", 
+        [NSDictionary dictionaryWithObjectsAndKeys:@"QSTwitter",
          QSNotifierTitle, message, QSNotifierText,
          [QSResourceManager imageNamed:@"QSTwitter2"],QSNotifierIcon,nil]);
 }
@@ -21,42 +24,43 @@ void TwitterNotify(NSString *message)
 @implementation TwitterAction
 
 - (QSObject *)performActionOnObject:(QSObject *)dObject{
-  
-  NSString *userName = [[NSUserDefaults standardUserDefaults] valueForKey:@"QSTwitterUserName"];
-  NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"QSTwitterUserPassword"];
-  
-  if (!userName && !password) {
-    TwitterNotify(@"Please Set up your account in the preference pane.");
-  }else{
-    // The Update message sent from Quicksilver's text input
-    NSString *updateMessage;
     
-    updateMessage = [NSString stringWithFormat:@"%@",[dObject stringValue]];
+    //NSString *userName = [[NSUserDefaults standardUserDefaults] valueForKey:@"QSTwitterUserName"];
+    //NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"QSTwitterUserPassword"];
     
-    // The update URL
-    NSURL *updateURL = [NSURL URLWithString:
-          [NSString stringWithFormat:@"http://twitter.com/statuses/update.json"]];
-    
-    // The update request
-    ASIFormDataRequest *updateRequest = [ASIFormDataRequest requestWithURL:updateURL];
-    [updateRequest setUsername:@"yourusername"];
-    [updateRequest setPassword:@"yourpassword"];
-    [updateRequest setPostValue:[NSString stringWithFormat:@"%@", [dObject stringValue]] forKey:@"status"];
-    [updateRequest start];
-    
-    // The response error (if any)
-    NSError *responseError = [updateRequest error];
-    
-    if (!responseError) {
-      // The response string
-      NSString *response = [updateRequest responseString];
-      TwitterNotify(response);
-    } else {
-      TwitterNotify([responseError localizedDescription]);
-    }
-  }
-
-  
-  return nil;
+    NSURL *url = [NSURL URLWithString:@"https://twitter.com/statuses/update.json"];
+    NSString *message = [dObject stringValue];
+    NSString *method = @"POST";
+    NSData *body = [[NSString stringWithFormat:@"status=%@", message] dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *header = OAuthorizationHeader(url, method, body, CONSUMER_KEY, CONSUMER_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:method];
+    [request setValue:header forHTTPHeaderField:@"Authorization"];
+    [request setHTTPBody:body];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    //NSURLResponse *response = nil;
+    //NSError       *error    = nil;
+    //NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    return nil;
 }
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    //TwitterNotify([[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    NSString *dataString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+    //NSLog(@"data: %@", dataString);
+    NSDictionary *dic = [dataString JSONValue];
+    NSString *message = [dic objectForKey:@"text"];
+    if (message) {
+        TwitterNotify(message);
+    } else {
+        TwitterNotify([NSString stringWithFormat:@"ERROR: %@",[dic objectForKey:@"error"]]);
+    }
+}
+
+-(void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
+{
+    TwitterNotify([error description]);
+}
+
 @end

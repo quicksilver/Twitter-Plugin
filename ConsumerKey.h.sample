@@ -1,0 +1,12 @@
+//
+//  ConsumerKey.h
+//  QSTwitter
+//
+//  Created by Masato Igarashi on 11/05/07.
+//  Copyright 2011 @migrs. All rights reserved.
+//
+
+#define CONSUMER_KEY        @""
+#define CONSUMER_KEY_SECRET @""
+#define ACCESS_TOKEN        @""
+#define ACCESS_TOKEN_SECRET @""
