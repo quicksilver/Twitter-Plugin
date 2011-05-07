@@ -29,7 +29,7 @@
         NSString *oauth_token        = [dict valueForKey:@"oauth_token"];
         NSString *oauth_token_secret = [dict valueForKey:@"oauth_token_secret"];
 
-        if (userName != [dict valueForKey:@"screen_name"] ||
+        if (![userName isEqualToString:[dict valueForKey:@"screen_name"]] ||
                 !(password == nil || [password isEqualToString:@""])) {
 
             dict = AccessTokenRequest(userName, password);
