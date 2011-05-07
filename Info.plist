@@ -5,17 +5,21 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>QSTwitter</string>
+	<string>QSTwit</string>
+	<key>CFBundleIconFile</key>
+	<string>QSTwit</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.thesempiternalholt.QSTwitter</string>
+	<string>jp.igrs.QSTwit</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>QSTwitter</string>
+	<string>QSTwit</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>7C</string>
+	<string>80</string>
 	<key>NSPrincipalClass</key>
 	<string>Twitter</string>
 	<key>QSActions</key>
@@ -31,7 +35,7 @@
 				<string>NSStringPboardType</string>
 			</array>
 			<key>icon</key>
-			<string>QSTwitter2</string>
+			<string>QSTwit</string>
 			<key>name</key>
 			<string>Twitter</string>
 			<key>validatesObjects</key>
@@ -40,15 +44,15 @@
 	</dict>
 	<key>QSDefaults</key>
 	<dict>
-		<key>QSTwitterUserName</key>
+		<key>QSTwitUserName</key>
 		<string></string>
-		<key>QSTwitterUserPassword</key>
+		<key>QSTwitUserPassword</key>
 		<string></string>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
-		<string>Joshua Holt</string>
+		<string>Masato Igarashi</string>
 		<key>categories</key>
 		<array>
 			<string>Applications</string>
@@ -57,7 +61,7 @@
 		<key>description</key>
 		<string>Posts a Tweet to your twitter account</string>
 		<key>icon</key>
-		<string>QSTwitter2</string>
+		<string>QSTwit</string>
 		<key>qsversion</key>
 		<string>β56a7</string>
 		<key>relatedBundles </key>
@@ -98,31 +102,31 @@
 		</dict>
 		<key>QSPreferencePanes</key>
 		<dict>
-			<key>QSTwitterPrefPane</key>
+			<key>QSTwitPrefPane</key>
 			<dict>
 				<key>class</key>
 				<string>QSPreferencePane</string>
 				<key>description</key>
-				<string>QSTwitter Preferences</string>
+				<string>QSTwit Preferences</string>
 				<key>icon</key>
-				<string>QSTwitter2</string>
+				<string>QSTwit</string>
 				<key>name</key>
-				<string>QSTwitter</string>
+				<string>QSTwit</string>
 				<key>nibBundle</key>
-				<string>com.thesempiternalholt.QSTwitter</string>
+				<string>jp.igrs.QSTwit</string>
 				<key>nibName</key>
-				<string>QSTwitterPrefPane</string>
+				<string>QSTwitPrefPane</string>
 			</dict>
 		</dict>
 	</dict>
 	<key>QSResourceAdditions</key>
 	<dict>
-		<key>QSTwitter2</key>
+		<key>QSTwit</key>
 		<dict>
 			<key>bundle</key>
-			<string>com.thesempiternalholt.QSTwitter</string>
+			<string>jp.igrs.QSTwit</string>
 			<key>resource</key>
-			<string>QSTwitter2.icns</string>
+			<string>QSTwit.icns</string>
 		</dict>
 	</dict>
 </dict>

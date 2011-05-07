@@ -11,8 +11,8 @@
 		15E6D36613730AF30037D2D7 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D34D13730AF30037D2D7 /* NSData+Base64.m */; };
 		15E6D36713730AF30037D2D7 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D34F13730AF30037D2D7 /* OAuth+Additions.m */; };
 		15E6D36813730AF30037D2D7 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D35113730AF30037D2D7 /* OAuthCore.m */; };
-		355272C310E3354E00194344 /* QSTwitterPrefPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 355272C210E3354E00194344 /* QSTwitterPrefPane.nib */; };
-		355272DD10E33BD600194344 /* QSTwitter2.icns in Resources */ = {isa = PBXBuildFile; fileRef = 355272DC10E33BD600194344 /* QSTwitter2.icns */; };
+		355272C310E3354E00194344 /* QSTwitPrefPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 355272C210E3354E00194344 /* QSTwitPrefPane.nib */; };
+		355272DD10E33BD600194344 /* QSTwit.icns in Resources */ = {isa = PBXBuildFile; fileRef = 355272DC10E33BD600194344 /* QSTwit.icns */; };
 		35857B4010E200550054319B /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 35857B3510E200550054319B /* NSObject+SBJSON.m */; };
 		35857B4110E200550054319B /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 35857B3710E200550054319B /* NSString+SBJSON.m */; };
 		35857B4210E200550054319B /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 35857B3910E200550054319B /* SBJSON.m */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1527DD731374F11B00856262 /* TwitterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TwitterUtil.h; sourceTree = "<group>"; };
+		1527DD731374F11B00856262 /* TwitterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUtil.h; sourceTree = "<group>"; };
 		1527DD741374F11B00856262 /* TwitterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUtil.m; sourceTree = "<group>"; };
 		154F2D561374451300AA8175 /* ConsumerKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerKey.h; sourceTree = "<group>"; };
 		15E6D34C13730AF30037D2D7 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -41,9 +41,9 @@
 		15E6D34F13730AF30037D2D7 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
 		15E6D35013730AF30037D2D7 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
 		15E6D35113730AF30037D2D7 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
-		32DBCF980370C29C00C91783 /* QSTwitter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTwitter_Prefix.pch; sourceTree = "<group>"; };
-		355272C210E3354E00194344 /* QSTwitterPrefPane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = QSTwitterPrefPane.nib; sourceTree = "<group>"; };
-		355272DC10E33BD600194344 /* QSTwitter2.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QSTwitter2.icns; sourceTree = "<group>"; };
+		32DBCF980370C29C00C91783 /* QSTwit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTwit_Prefix.pch; sourceTree = "<group>"; };
+		355272C210E3354E00194344 /* QSTwitPrefPane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = QSTwitPrefPane.nib; sourceTree = "<group>"; };
+		355272DC10E33BD600194344 /* QSTwit.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QSTwit.icns; sourceTree = "<group>"; };
 		35857B3310E200550054319B /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		35857B3410E200550054319B /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		35857B3510E200550054319B /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		7FFA8E9C0816CCCA00A858CD /* QSEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSEffects.framework; sourceTree = QSFrameworks; };
 		7FFA8E9D0816CCCA00A858CD /* QSInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSInterface.framework; sourceTree = QSFrameworks; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D1AC9740486D14A00FE50C9 /* QSTwitter.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QSTwitter.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1AC9740486D14A00FE50C9 /* QSTwit.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QSTwit.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF5817A0B1D9D84003CFF55 /* TwitterAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterAction.h; sourceTree = "<group>"; };
 		BBF5817B0B1D9D84003CFF55 /* TwitterAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterAction.m; sourceTree = "<group>"; };
 		BBF581820B1D9DC3003CFF55 /* TwitterSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSource.h; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		0259C582FE90428111CA0C5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				355272DC10E33BD600194344 /* QSTwitter2.icns */,
-				355272C210E3354E00194344 /* QSTwitterPrefPane.nib */,
+				355272DC10E33BD600194344 /* QSTwit.icns */,
+				355272C210E3354E00194344 /* QSTwitPrefPane.nib */,
 				8D1AC9730486D14A00FE50C9 /* Info.plist */,
 			);
 			name = Resources;
@@ -135,7 +135,7 @@
 		1ED78706FE9D4A0611CA0C5A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1AC9740486D14A00FE50C9 /* QSTwitter.qsplugin */,
+				8D1AC9740486D14A00FE50C9 /* QSTwit.qsplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 			children = (
 				15E6D33313730AF30037D2D7 /* OAuthCore */,
 				35857B3210E200550054319B /* JSON */,
-				32DBCF980370C29C00C91783 /* QSTwitter_Prefix.pch */,
+				32DBCF980370C29C00C91783 /* QSTwit_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -214,9 +214,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1AC9600486D14A00FE50C9 /* QSTwitter */ = {
+		8D1AC9600486D14A00FE50C9 /* QSTwit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "QSTwitter" */;
+			buildConfigurationList = 7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "QSTwit" */;
 			buildPhases = (
 				8D1AC9660486D14A00FE50C9 /* Resources */,
 				8D1AC96A0486D14A00FE50C9 /* Sources */,
@@ -227,10 +227,10 @@
 			);
 			dependencies = (
 			);
-			name = QSTwitter;
+			name = QSTwit;
 			productInstallPath = "$(HOME)/Developer/Palettes";
 			productName = Twitter;
-			productReference = 8D1AC9740486D14A00FE50C9 /* QSTwitter.qsplugin */;
+			productReference = 8D1AC9740486D14A00FE50C9 /* QSTwit.qsplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -238,7 +238,7 @@
 /* Begin PBXProject section */
 		0259C573FE90428111CA0C5A /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "QSTwitter" */;
+			buildConfigurationList = 7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "QSTwit" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -249,7 +249,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1AC9600486D14A00FE50C9 /* QSTwitter */,
+				8D1AC9600486D14A00FE50C9 /* QSTwit */,
 			);
 		};
 /* End PBXProject section */
@@ -259,8 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				355272C310E3354E00194344 /* QSTwitterPrefPane.nib in Resources */,
-				355272DD10E33BD600194344 /* QSTwitter2.icns in Resources */,
+				355272C310E3354E00194344 /* QSTwitPrefPane.nib in Resources */,
+				355272DD10E33BD600194344 /* QSTwit.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,11 +316,11 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = QSTwitter_Prefix.pch;
+				GCC_PREFIX_HEADER = QSTwit_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-bundle";
-				PRODUCT_NAME = QSTwitter;
+				PRODUCT_NAME = QSTwit;
 				WRAPPER_EXTENSION = qsplugin;
 				ZERO_LINK = YES;
 			};
@@ -334,10 +334,10 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = QSTwitter_Prefix.pch;
+				GCC_PREFIX_HEADER = QSTwit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-bundle";
-				PRODUCT_NAME = QSTwitter;
+				PRODUCT_NAME = QSTwit;
 				WRAPPER_EXTENSION = qsplugin;
 				ZERO_LINK = NO;
 			};
@@ -367,7 +367,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "QSTwitter" */ = {
+		7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "QSTwit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F6B3EEC085CE8DF000735A8 /* Development */,
@@ -376,7 +376,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "QSTwitter" */ = {
+		7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "QSTwit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F6B3EF0085CE8DF000735A8 /* Development */,

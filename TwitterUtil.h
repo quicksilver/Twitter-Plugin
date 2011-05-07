@@ -1,6 +1,6 @@
 //
 //  TwitterUtil.h
-//  QSTwitter
+//  QSTwit
 //
 //  Created by Masato Igarashi on 11/05/07.
 //  Copyright 2011 @migrs. All rights reserved.

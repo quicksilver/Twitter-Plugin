@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
-Project: QSTwitter
+Project: QSTwit
 Description: A Quicksilver Twitter posting plugin
 Date: 12.23.2009
 Author: Joshua Holt

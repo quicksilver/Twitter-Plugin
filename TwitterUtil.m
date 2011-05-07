@@ -1,6 +1,6 @@
 //
 //  TwitterUtil.m
-//  QSTwitter
+//  QSTwit
 //
 //  Created by Masato Igarashi on 11/05/07.
 //  Copyright 2011 @migrs. All rights reserved.
@@ -16,9 +16,9 @@
 void TwitterNotify(NSString *message)
 {
     QSShowNotifierWithAttributes(
-                                 [NSDictionary dictionaryWithObjectsAndKeys:@"QSTwitter",
+                                 [NSDictionary dictionaryWithObjectsAndKeys:@"QSTwit",
                                   QSNotifierTitle, message, QSNotifierText,
-                                  [QSResourceManager imageNamed:@"QSTwitter2"],QSNotifierIcon,nil]);
+                                  [QSResourceManager imageNamed:@"QSTwit"],QSNotifierIcon,nil]);
 }
 
 NSData *OAuthRequest(NSURL *url, NSData *body, NSString *token, NSString *secret) {
@@ -44,7 +44,7 @@ NSDictionary *AccessTokenRequest(NSString *username, NSString *password) {
 }
 
 NSDictionary *Tweet(NSString *message, NSString *token, NSString *secret) {
-    NSURL *url = [NSURL URLWithString:@"https://twitter.com/statuses/update.json"];
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1/statuses/update.json"];
     NSData *body = [[NSString stringWithFormat:@"status=%@", message] dataUsingEncoding:NSUTF8StringEncoding];
     NSData *result = OAuthRequest(url, body, token, secret);
     NSString *resultString = [[[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding] autorelease];
