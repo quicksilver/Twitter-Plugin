@@ -11,8 +11,6 @@
 
 #define kTwitterAction @"TwitterAction"
 
-void TwitterNotify(NSString *message);
-
 @interface TwitterAction : QSActionProvider
 {
 }

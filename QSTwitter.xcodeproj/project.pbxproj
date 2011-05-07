@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1527DD751374F11B00856262 /* TwitterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1527DD741374F11B00856262 /* TwitterUtil.m */; };
 		15E6D36613730AF30037D2D7 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D34D13730AF30037D2D7 /* NSData+Base64.m */; };
 		15E6D36713730AF30037D2D7 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D34F13730AF30037D2D7 /* OAuth+Additions.m */; };
 		15E6D36813730AF30037D2D7 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E6D35113730AF30037D2D7 /* OAuthCore.m */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1527DD731374F11B00856262 /* TwitterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TwitterUtil.h; sourceTree = "<group>"; };
+		1527DD741374F11B00856262 /* TwitterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUtil.m; sourceTree = "<group>"; };
 		154F2D561374451300AA8175 /* ConsumerKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerKey.h; sourceTree = "<group>"; };
 		15E6D34C13730AF30037D2D7 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		15E6D34D13730AF30037D2D7 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				BBF581820B1D9DC3003CFF55 /* TwitterSource.h */,
 				BBF581830B1D9DC3003CFF55 /* TwitterSource.m */,
 				154F2D561374451300AA8175 /* ConsumerKey.h */,
+				1527DD731374F11B00856262 /* TwitterUtil.h */,
+				1527DD741374F11B00856262 /* TwitterUtil.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				15E6D36613730AF30037D2D7 /* NSData+Base64.m in Sources */,
 				15E6D36713730AF30037D2D7 /* OAuth+Additions.m in Sources */,
 				15E6D36813730AF30037D2D7 /* OAuthCore.m in Sources */,
+				1527DD751374F11B00856262 /* TwitterUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
