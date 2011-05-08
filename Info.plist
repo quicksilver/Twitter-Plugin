@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>80</string>
+	<string>82</string>
 	<key>NSPrincipalClass</key>
 	<string>Twitter</string>
 	<key>QSActions</key>
@@ -37,7 +37,7 @@
 			<key>icon</key>
 			<string>QSTwit</string>
 			<key>name</key>
-			<string>Twitter</string>
+			<string>Tweet</string>
 			<key>validatesObjects</key>
 			<false/>
 		</dict>
