@@ -9,17 +9,21 @@
 	<key>CFBundleIconFile</key>
 	<string>QSTwit</string>
 	<key>CFBundleIdentifier</key>
-	<string>jp.igrs.QSTwit</string>
+	<string>com.qsapp.QSTwit</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>QSTwit</string>
+	<string>Twitter Plugin</string>
+	<key>CFBundleDisplayName</key>
+	<string>Twitter Plugin</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
 	<string>82</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
 	<key>NSPrincipalClass</key>
 	<string>Twitter</string>
 	<key>QSActions</key>
@@ -102,20 +106,20 @@
 		</dict>
 		<key>QSPreferencePanes</key>
 		<dict>
-			<key>QSTwitPrefPane</key>
+			<key>QSTwitterPrefPane</key>
 			<dict>
 				<key>class</key>
-				<string>QSPreferencePane</string>
+				<string>QSTwitterPrefPane</string>
 				<key>description</key>
-				<string>QSTwit Preferences</string>
+				<string>Twitter Preferences</string>
 				<key>icon</key>
 				<string>QSTwit</string>
 				<key>name</key>
-				<string>QSTwit</string>
+				<string>Twitter</string>
 				<key>nibBundle</key>
-				<string>jp.igrs.QSTwit</string>
+				<string>com.qsapp.QSTwit</string>
 				<key>nibName</key>
-				<string>QSTwitPrefPane</string>
+				<string>QSTwitterPrefPane</string>
 			</dict>
 		</dict>
 	</dict>
@@ -124,7 +128,7 @@
 		<key>QSTwit</key>
 		<dict>
 			<key>bundle</key>
-			<string>jp.igrs.QSTwit</string>
+			<string>com.qsapp.QSTwit</string>
 			<key>resource</key>
 			<string>QSTwit.icns</string>
 		</dict>

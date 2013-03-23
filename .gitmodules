@@ -1,0 +1,3 @@
+[submodule "OAuth"]
+	path = OAuth
+	url = git://github.com/nxtbgthng/OAuth2Client.git
