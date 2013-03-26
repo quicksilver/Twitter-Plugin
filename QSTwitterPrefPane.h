@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <OAuthConsumer/OAuthConsumer.h>
 
 @interface QSTwitterPrefPane : QSPreferencePane {
     IBOutlet NSTextField *usr;
@@ -16,5 +15,7 @@
 }
 
 -(IBAction)authenticate:(id)sender;
+-(void)updateUI;
+-(void)updateCredentials:(NSDictionary *)credentials;
 
 @end

@@ -14,33 +14,48 @@
 
 @implementation QSTwitterPrefPane
 
--(IBAction)authenticate:(id)sender {
+-(NSView *)loadMainView {
+    NSView *view = [super loadMainView];
+    [[QSTwitterUtil sharedInstance] setPrefPane:self];
     [ind setHidden:NO];
-    [[QSTwitterUtil sharedInstance] signInToCustomService];
+    [ind startAnimation:self];
     [self updateUI];
+    return view;
 }
 
--(void)updateUI {
-    QSTwitterUtil *ut = [QSTwitterUtil sharedInstance];
+-(IBAction)authenticate:(id)sender {
+    QSTwitterUtil *tu = [QSTwitterUtil sharedInstance];
+    if ([tu isSignedIn]) {
+        [tu signOut];
+        [self updateUI];
+    } else {
+        [ind setHidden:NO];
+        [ind startAnimation:sender];
+        [tu signInToCustomService];
+    }
+}
+
+-(void)updateCredentials:(NSDictionary *)credentials {
+    NSString *name = nil;
+    if (credentials) {
+        name = [NSString stringWithFormat:@"%@ (%@)",[credentials objectForKey:@"name"],[credentials objectForKey:@"screen_name"]];
+    }
+    
+    [usr setStringValue:(name != nil ? name : @"")];
+    [signInOutButton setTitle:@"Sign Out"];
     [ind setHidden:YES];
-    GTMOAuthAuthentication *authentication = [ut authentication];
-    if ([ut isSignedIn]) {
-        NSString *email = [authentication userEmail];
-        BOOL isVerified = [[authentication userEmailIsVerified] boolValue];
-        if (!isVerified) {
-            // email address is not verified
-            //
-            // The email address is listed with the account info on the server, but
-            // has not been confirmed as belonging to the owner of this account.
-            email = [email stringByAppendingString:@" (unverified)"];
-        }
-        
-        [usr setStringValue:(email != nil ? email : @"")];
-        [signInOutButton setTitle:@"Sign Out"];
+}
+-(void)updateUI {
+    QSTwitterUtil *tu = [QSTwitterUtil sharedInstance];
+    if ([tu isSignedIn]) {
+        [usr setStringValue:@"Loading..."];
+        [tu getCredentials];
     } else {
         // signed out
         [usr setStringValue:@"-Not signed in-"];
         [signInOutButton setTitle:@"Sign In"];
+        [ind setHidden:YES];
     }
 }
+
 @end

@@ -130,8 +130,8 @@ static NSString *const kTwitterServiceName = @"Twitter";
 
   [self signOut];
 
-  NSURL *requestURL = [NSURL URLWithString:@"http://twitter.com/oauth/request_token"];
-  NSURL *accessURL = [NSURL URLWithString:@"http://twitter.com/oauth/access_token"];
+  NSURL *requestURL = [NSURL URLWithString:@"http://api.twitter.com/oauth/request_token"];
+  NSURL *accessURL = [NSURL URLWithString:@"http://api.twitter.com/oauth/access_token"];
   NSURL *authorizeURL = [NSURL URLWithString:@"http://twitter.com/oauth/authorize"];
   NSString *scope = @"http://api.twitter.com/";
 
@@ -145,7 +145,7 @@ static NSString *const kTwitterServiceName = @"Twitter";
   // finished or been canceled
   //
   // This URL does not need to be for an actual web page
-  [auth setCallback:@"http://www.example.com/OAuthCallback"];
+  [auth setCallback:@"http://qs.qsapp.com/"];
 
   GTMOAuthWindowController *windowController;
   windowController = [[[GTMOAuthWindowController alloc] initWithScope:scope

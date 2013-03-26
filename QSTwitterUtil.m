@@ -11,11 +11,16 @@
 #import "GTMOAuthAuthentication.h"
 #import "GTMOAuthWindowController.h"
 #import "QSTwitterDefines.h"
+#import <YAJL/YAJL.h>
+#import "QSTwitterPrefPane.h"
 
 @implementation QSTwitterUtil
 
-@synthesize authentication;
+@synthesize authentication,prefPane;
 
++ (void)initialize {
+    [QSTwitterUtil sharedInstance];
+}
 + (QSTwitterUtil *) sharedInstance {
     static QSTwitterUtil *tu = nil;
     if (tu == nil) {
@@ -24,6 +29,18 @@
     return tu;
 }
 
+-(id)init {
+    if (self = [super init]) {
+        GTMOAuthAuthentication *auth = [self auth];
+        if (auth) {
+            [GTMOAuthWindowController authorizeFromKeychainForName:kQSTwitterKeychainItemName
+                                                                   authentication:auth];
+        }
+        [self setAuthentication:auth];
+
+    }
+    return self;
+}
 -(void)twitterNotify:(NSString *)message {
     QSShowNotifierWithAttributes(
                                  [NSDictionary dictionaryWithObjectsAndKeys:@"QSTwit",
@@ -40,12 +57,41 @@
     
     // setting the service name lets us inspect the auth object later to know
     // what service it is for
-    auth.serviceProvider = @"Twitter Auth Service";
+    auth.serviceProvider = kQSTwitterServiceName;
     
     return auth;
 }
 
+- (void)signOut {
+    // remove the stored Twitter authentication from the keychain, if any
+    [GTMOAuthWindowController removeParamsFromKeychainForName:kQSTwitterKeychainItemName];
+    
+    // discard our retains authentication object
+    [self setAuthentication:nil];
+}
+
+-(void)tweet:(NSString *)message {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:kTwitterUpdateURL];
+    [authentication authorizeRequest:request];
+    [request setValue:@"application/x-www-form-urlencoded"
+    forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:[[NSString stringWithFormat:@"status=%@", message] dataUsingEncoding:NSUTF8StringEncoding]];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
+        if (err) {
+            [self twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"[Error] %@", nil, [NSBundle bundleForClass:[self class]], @"error sending tweet message"), [err localizedDescription]]];
+        } else {
+            NSDictionary *response = [data yajl_JSON];
+            if ([response valueForKey:@"text"]) {
+                [self twitterNotify:NSLocalizedStringFromTableInBundle(@"Tweet sent successfully", nil, [NSBundle bundleForClass:[self class]], nil)];
+            } else {
+                [self twitterNotify:[NSString stringWithFormat:@"[ERROR] %@",[response valueForKey:@"error"]]];
+            }
+        }
+    }];
+}
+
 - (void)signInToCustomService {
+    [self signOut];
     NSString *scope = @"http://api.twitter.com/";    
     GTMOAuthAuthentication *auth = [self auth];
     
@@ -64,7 +110,7 @@
                                                        authorizeTokenURL:kTwitterAuthorizeURL
                                                           accessTokenURL:kTwitterAccessTokenURL
                                                           authentication:auth
-                                                          appServiceName:@"Quicksilver Twitter Service"
+                                                          appServiceName:kQSTwitterKeychainItemName
                                                           resourceBundle:[NSBundle bundleForClass:[self class]]] autorelease];
     [windowController signInSheetModalForWindow:nil
                                        delegate:self
@@ -88,20 +134,21 @@
         
         [self setAuthentication:nil];
     } else {
-        // Authentication succeeded
-        //
-        // At this point, we either use the authentication object to explicitly
-        // authorize requests, like
-        //
-        //   [auth authorizeRequest:myNSURLMutableRequest]
-        //
-        // or store the authentication object into a GTMHTTPFetcher object like
-        //
-        //   [fetcher setAuthorizer:auth];
-        
+
         // save the authentication object
         [self setAuthentication:auth];
+        [self.prefPane updateUI];
     }
+}
+
+-(void)getCredentials {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.twitter.com/1/account/verify_credentials.json"]];
+    [authentication authorizeRequest:request];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *err) {
+        if (data) {
+            [self.prefPane updateCredentials:[data yajl_JSON]];
+        }
+    }];
 }
 
 - (BOOL)isSignedIn {

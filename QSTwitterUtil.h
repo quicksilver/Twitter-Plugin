@@ -9,17 +9,22 @@
 #import <Foundation/Foundation.h>
 
 @class GTMOAuthAuthentication;
+@class QSTwitterPrefPane;
 
 @interface QSTwitterUtil : NSObject {
     GTMOAuthAuthentication *authentication;
+    QSTwitterPrefPane *prefPane;
 }
 
-
+@property (retain) QSTwitterPrefPane *prefPane;
 @property (retain) GTMOAuthAuthentication *authentication;
 
-+(id)sharedInstance;
--(void)twitterNotify:(NSString *)message;
++ (id)sharedInstance;
+- (void)twitterNotify:(NSString *)message;
 - (void)signInToCustomService;
 - (BOOL)isSignedIn;
+- (void)getCredentials;
+- (void)signOut;
+- (void)tweet:(NSString*)message;
 
 @end
