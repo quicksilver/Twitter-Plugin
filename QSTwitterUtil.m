@@ -43,7 +43,7 @@
 }
 -(void)twitterNotify:(NSString *)message {
     QSShowNotifierWithAttributes(
-                                 [NSDictionary dictionaryWithObjectsAndKeys:@"QSTwit",
+                                 [NSDictionary dictionaryWithObjectsAndKeys:@"Quicksilver Twitter",
                                   QSNotifierTitle, message, QSNotifierText,
                                   [QSResourceManager imageNamed:@"QSTwit"],QSNotifierIcon,nil]);
 }
