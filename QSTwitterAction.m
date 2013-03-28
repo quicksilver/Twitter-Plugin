@@ -13,7 +13,7 @@
 @implementation QSTwitterAction
 
 -(NSArray*)validActionsForDirectObject:(QSObject *)dObject indirectObject:(QSObject *)iObject {
-    if ([self twitterUsernameForContact:dObject] != nil) {
+    if ([dObject count] == 1 && [self twitterUsernameForContact:dObject] != nil) {
         return @[kDirectMessageAction, kSendMessageAction];
     }
     return nil;
