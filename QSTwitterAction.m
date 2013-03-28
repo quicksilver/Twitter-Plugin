@@ -53,40 +53,40 @@
     return nil;
 }
 
--(void)showTooLongthNotifWithLength:(NSUInteger)length {
-    [[QSTwitterUtil sharedInstance] twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Message too long (%lu chars)", nil, [NSBundle bundleForClass:[self class]], @"too long message for tweetts"), length]];
+-(BOOL)messageIsTooLong:(NSString *)message {
+    if ([message length] > kMaxTweetLength) {
+    [[QSTwitterUtil sharedInstance] twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Message too long (%lu chars)", nil, [NSBundle bundleForClass:[self class]], @"too long message for tweetts"), [message length]]];
+        return YES;
+    }
+    return NO;
 }
 
 - (QSObject *)sendTweet:(QSObject *)dObject {
     NSString *message = [dObject stringValue];
     QSTwitterUtil *tu = [QSTwitterUtil sharedInstance];
-    if (![tu isSignedIn]) {
-        [tu twitterNotify:NSLocalizedStringFromTableInBundle(@"Not signed in to Twitter", nil, [NSBundle bundleForClass:[self class]], @"not signed in message")];
+    if ([self messageIsTooLong:message]) {
         return [QSObject textProxyObjectWithDefaultValue:message];
     }
-    if ([message length] > kMaxTweetLength) {
-        [self showTooLongthNotifWithLength:[message length]];
-        return [QSObject textProxyObjectWithDefaultValue:message];
-    }
-    [tu tweet:message];
-    return nil;
+    return [tu tweet:message toUser:nil];
 }
 
--(QSObject*)sendDirectMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
+-(QSObject *)sendDirectMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
     NSString *username = [self twitterUsernameForContact:iObject];
+    NSString *message = [dObject stringValue];
     
-    return nil;
+    if ([self messageIsTooLong:message]) {
+        return [QSObject textProxyObjectWithDefaultValue:[dObject stringValue]];
+    }
+    return [[QSTwitterUtil sharedInstance] tweet:message toUser:username];
 }
 
 -(QSObject*)sendMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
     NSString *username = [self twitterUsernameForContact:iObject];
     NSString *message = [NSString stringWithFormat:@"@%@ %@",username,[dObject stringValue]];
-    if ([message length] > kMaxTweetLength) {
-        [self showTooLongthNotifWithLength:[message length]];
+    if ([self messageIsTooLong:message]) {
         return [QSObject textProxyObjectWithDefaultValue:[dObject stringValue]];
     }
-    
-    return nil;
+    return [[QSTwitterUtil sharedInstance] tweet:message toUser:nil];
 }
 
 @end

@@ -74,13 +74,12 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{15, 14}, {270, 123}}</string>
 											<reference key="NSSuperview" ref="551295381"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="748280428"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="460015884">
 												<int key="NSCellFlags">67108864</int>
 												<int key="NSCellFlags2">272891904</int>
-												<string key="NSContents">Click the button below to Authenticate Quicksilver with your Twitter account</string>
+												<string key="NSContents">Click the button below to authenticate Quicksilver with your Twitter account</string>
 												<object class="NSFont" key="NSSupport">
 													<string key="NSName">Verdana</string>
 													<double key="NSSize">9</double>
@@ -113,7 +112,7 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{183, 13}, {100, 16}}</string>
 											<reference key="NSSuperview" ref="551295381"/>
-											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="124086214">
 												<int key="NSCellFlags">67108864</int>
@@ -139,7 +138,6 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{15, 70}, {60, 11}}</string>
 											<reference key="NSSuperview" ref="551295381"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="973111557"/>
 											<string key="NSReuseIdentifierKey">_NS:1535</string>
 											<bool key="NSEnabled">YES</bool>
@@ -160,7 +158,6 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{77, 50}, {208, 31}}</string>
 											<reference key="NSSuperview" ref="551295381"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="1041757580"/>
 											<string key="NSReuseIdentifierKey">_NS:1535</string>
 											<bool key="NSEnabled">YES</bool>
@@ -181,7 +178,6 @@
 											<int key="NSvFlags">-2147483380</int>
 											<string key="NSFrame">{{160, 13}, {16, 16}}</string>
 											<reference key="NSSuperview" ref="551295381"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="1015169326"/>
 											<string key="NSReuseIdentifierKey">_NS:945</string>
 											<int key="NSpiFlags">20746</int>
@@ -190,13 +186,11 @@
 									</object>
 									<string key="NSFrame">{{1, 1}, {300, 147}}</string>
 									<reference key="NSSuperview" ref="398285498"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="328536027"/>
 								</object>
 							</object>
 							<string key="NSFrame">{{17, 47}, {302, 163}}</string>
 							<reference key="NSSuperview" ref="371449838"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="551295381"/>
 							<string key="NSOffsets">{0, 0}</string>
 							<object class="NSTextFieldCell" key="NSTitleCell">
@@ -231,7 +225,6 @@
 					</object>
 					<string key="NSFrameSize">{336, 230}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="398285498"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
@@ -493,147 +486,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSApplication</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">relaunch:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">relaunch:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">relaunch:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSApplication.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">QSPreferencePane</string>
-					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">showPaneHelp:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">showPaneHelp:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">showPaneHelp:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>_firstKeyView</string>
-							<string>_initialKeyView</string>
-							<string>_lastKeyView</string>
-							<string>_window</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSView</string>
-							<string>NSView</string>
-							<string>NSView</string>
-							<string>NSWindow</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>_firstKeyView</string>
-							<string>_initialKeyView</string>
-							<string>_lastKeyView</string>
-							<string>_window</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">_firstKeyView</string>
-								<string key="candidateClassName">NSView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">_initialKeyView</string>
-								<string key="candidateClassName">NSView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">_lastKeyView</string>
-								<string key="candidateClassName">NSView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">_window</string>
-								<string key="candidateClassName">NSWindow</string>
-							</object>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/QSPreferencePane.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">QSTwitterPrefPane</string>
-					<string key="superclassName">QSPreferencePane</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">authenticate:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">authenticate:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">authenticate:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>ind</string>
-							<string>signInOutButton</string>
-							<string>usr</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSProgressIndicator</string>
-							<string>NSButton</string>
-							<string>NSTextField</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>ind</string>
-							<string>signInOutButton</string>
-							<string>usr</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">ind</string>
-								<string key="candidateClassName">NSProgressIndicator</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">signInOutButton</string>
-								<string key="candidateClassName">NSButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">usr</string>
-								<string key="candidateClassName">NSTextField</string>
-							</object>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/QSTwitterPrefPane.h</string>
 					</object>
 				</object>
 			</object>

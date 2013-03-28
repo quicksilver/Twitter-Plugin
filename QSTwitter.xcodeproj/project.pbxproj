@@ -35,11 +35,6 @@
 		CDB3CD1516FD61CE00DF06BF /* GTMMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0C16FD61CD00DF06BF /* GTMMIMEDocument.m */; };
 		CDB3CD1616FD61CE00DF06BF /* GTMReadMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0E16FD61CE00DF06BF /* GTMReadMonitorInputStream.m */; };
 		CDB3CD1816FDD79800DF06BF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
-		CDE38B1D1702DFB5007A6BC1 /* Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CDE38B171702DFB5007A6BC1 /* Common.xcconfig */; };
-		CDE38B1E1702DFB5007A6BC1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CDE38B181702DFB5007A6BC1 /* Debug.xcconfig */; };
-		CDE38B1F1702DFB5007A6BC1 /* Developer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CDE38B191702DFB5007A6BC1 /* Developer.xcconfig */; };
-		CDE38B201702DFB5007A6BC1 /* QSPlugIn.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CDE38B1A1702DFB5007A6BC1 /* QSPlugIn.xcconfig */; };
-		CDE38B211702DFB5007A6BC1 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CDE38B1C1702DFB5007A6BC1 /* Release.xcconfig */; };
 		CDE38B231702ED2D007A6BC1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE38B221702ED2D007A6BC1 /* AddressBook.framework */; };
 		CDE38B241702ED45007A6BC1 /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3C07F9ACD90056051D /* QSCore.framework */; };
 /* End PBXBuildFile section */
@@ -145,7 +140,6 @@
 		0259C574FE90428111CA0C5A /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
-				CDE38B221702ED2D007A6BC1 /* AddressBook.framework */,
 				CDE38B161702DFB5007A6BC1 /* Configuration */,
 				CDB3CCEC16FD5EA100DF06BF /* GTM-OAuth */,
 				32DBCF9E0370C38000C91783 /* Classes */,
@@ -179,6 +173,7 @@
 		2E58F364FFB232C311CA0CBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDE38B221702ED2D007A6BC1 /* AddressBook.framework */,
 				CDB3CD1716FDD79800DF06BF /* YAJL.framework */,
 				CDB3CCE316FD58A600DF06BF /* QSInterface.framework */,
 				CDB3CCDD16FD56E800DF06BF /* Security.framework */,
@@ -334,11 +329,6 @@
 				355272DD10E33BD600194344 /* QSTwit.icns in Resources */,
 				CDB3CCE716FD59B800DF06BF /* QSTwitterPrefPane.xib in Resources */,
 				CDB3CCF916FD5EA100DF06BF /* GTMOAuthWindow.xib in Resources */,
-				CDE38B1D1702DFB5007A6BC1 /* Common.xcconfig in Resources */,
-				CDE38B1E1702DFB5007A6BC1 /* Debug.xcconfig in Resources */,
-				CDE38B1F1702DFB5007A6BC1 /* Developer.xcconfig in Resources */,
-				CDE38B201702DFB5007A6BC1 /* QSPlugIn.xcconfig in Resources */,
-				CDE38B211702DFB5007A6BC1 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,6 @@
 - (BOOL)isSignedIn;
 - (void)getCredentials;
 - (void)signOut;
-- (void)tweet:(NSString*)message;
+- (QSObject *)tweet:(NSString*)message toUser:(NSString*)user;
 
 @end

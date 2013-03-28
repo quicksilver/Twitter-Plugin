@@ -70,12 +70,18 @@
     [self setAuthentication:nil];
 }
 
--(void)tweet:(NSString *)message {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:kTwitterUpdateURL];
+// if 'user' is not nil then it's a direct message
+-(QSObject *)tweet:(NSString *)message toUser:(NSString*)user {
+    if (![self isSignedIn]) {
+        [self twitterNotify:NSLocalizedStringFromTableInBundle(@"Not signed in to Twitter", nil, [NSBundle bundleForClass:[self class]], @"not signed in message")];
+        return [QSObject textProxyObjectWithDefaultValue:message];
+    }
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:user ? kTwitterDMURL : kTwitterUpdateURL];
     [request setValue:@"application/x-www-form-urlencoded"
-    forHTTPHeaderField:@"Content-Type"];
+   forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:[[NSString stringWithFormat:@"status=%@", message] dataUsingEncoding:NSUTF8StringEncoding]];
+    message = (NSString*) CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)message, NULL,CFSTR(":/?#[]@!$&’'()*+,;=."), kCFStringEncodingUTF8);
+    [request setHTTPBody:[[NSString stringWithFormat:@"%@%@=%@", user ? [NSString stringWithFormat:@"screen_name=%@&", user] : @"" , user ? @"text" : @"status", message] dataUsingEncoding:NSUTF8StringEncoding]];
     [authentication authorizeRequest:request];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
         if (err != nil) {
@@ -89,6 +95,8 @@
             }
         }
     }];
+    return nil;
+
 }
 
 - (void)signInToCustomService {
