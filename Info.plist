@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>QSTwit</string>
+	<string>QSTwitter</string>
 	<key>CFBundleIconFile</key>
 	<string>QSTwit</string>
 	<key>CFBundleIdentifier</key>
@@ -25,15 +25,15 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>NSPrincipalClass</key>
-	<string>Twitter</string>
+	<string>QSTwitterUtil</string>
 	<key>QSActions</key>
 	<dict>
-		<key>TwitterAction</key>
+		<key>sendTweet</key>
 		<dict>
 			<key>actionClass</key>
-			<string>TwitterAction</string>
+			<string>QSTwitterAction</string>
 			<key>actionSelector</key>
-			<string>performActionOnObject:</string>
+			<string>sendTweet:</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSStringPboardType</string>
@@ -44,6 +44,94 @@
 			<string>Tweet</string>
 			<key>validatesObjects</key>
 			<false/>
+		</dict>
+		<key>sendDirectMessageTo</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSTwitterAction</string>
+			<key>actionSelector</key>
+			<string>sendDirectMessage:toContact:</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>indirectTypes</key>
+			<array>
+				<string>ABPeopleUIDsPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>QSTwit</string>
+			<key>name</key>
+			<string>Send Direct Message To...</string>
+			<key>validatesObjects</key>
+			<false/>
+		</dict>
+		<key>sendMessageTo</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSTwitterAction</string>
+			<key>actionSelector</key>
+			<string>sendMessage:toContact:</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>indirectTypes</key>
+			<array>
+				<string>ABPeopleUIDsPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>QSTwit</string>
+			<key>name</key>
+			<string>Send Tweet To...</string>
+			<key>validatesObjects</key>
+			<false/>
+		</dict>
+		<key>sendDirectMessage</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSTwitterAction</string>
+			<key>actionSelector</key>
+			<string>sendDirectMessage:toContact:</string>
+			<key>reverseArguments</key>
+			<true/>
+			<key>directTypes</key>
+			<array>
+				<string>ABPeopleUIDsPboardType</string>
+			</array>
+			<key>indirectTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>QSTwit</string>
+			<key>name</key>
+			<string>Send Direct Message…</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
+		<key>sendMessage</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSTwitterAction</string>
+			<key>actionSelector</key>
+			<string>sendMessage:toContact:</string>
+			<key>directTypes</key>
+			<array>
+				<string>ABPeopleUIDsPboardType</string>
+			</array>
+			<key>indirectTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>QSTwit</string>
+			<key>reverseArguments</key>
+			<true/>
+			<key>name</key>
+			<string>Send Tweet…</string>
+			<key>validatesObjects</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>QSDefaults</key>
@@ -86,8 +174,8 @@
 	<dict>
 		<key>QSActionProviders</key>
 		<dict>
-			<key>TwitterAction</key>
-			<string>TwitterAction</string>
+			<key>QSTwitterAction</key>
+			<string>QSTwitterAction</string>
 		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>

@@ -38,13 +38,14 @@
 -(void)updateCredentials:(NSDictionary *)credentials {
     NSString *name = nil;
     if (credentials) {
-        name = [NSString stringWithFormat:@"%@ (%@)",[credentials objectForKey:@"name"],[credentials objectForKey:@"screen_name"]];
+        name = [NSString stringWithFormat:@"%@%@",[credentials objectForKey:@"name"],[credentials objectForKey:@"screen_name"] ? [NSString stringWithFormat:@" (%@)",[credentials objectForKey:@"screen_name"]] : @""];
     }
     
     [usr setStringValue:(name != nil ? name : @"")];
-    [signInOutButton setTitle:@"Sign Out"];
+    [signInOutButton setTitle:[[QSTwitterUtil sharedInstance] isSignedIn] ? @"Sign Out" :@"Sign In"];
     [ind setHidden:YES];
 }
+
 -(void)updateUI {
     QSTwitterUtil *tu = [QSTwitterUtil sharedInstance];
     if ([tu isSignedIn]) {

@@ -72,12 +72,13 @@
 
 -(void)tweet:(NSString *)message {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:kTwitterUpdateURL];
-    [authentication authorizeRequest:request];
     [request setValue:@"application/x-www-form-urlencoded"
     forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[[NSString stringWithFormat:@"status=%@", message] dataUsingEncoding:NSUTF8StringEncoding]];
+    [authentication authorizeRequest:request];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
-        if (err) {
+        if (err != nil) {
             [self twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"[Error] %@", nil, [NSBundle bundleForClass:[self class]], @"error sending tweet message"), [err localizedDescription]]];
         } else {
             NSDictionary *response = [data yajl_JSON];
@@ -142,11 +143,13 @@
 }
 
 -(void)getCredentials {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.twitter.com/1/account/verify_credentials.json"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:kTwitterUserCredURL];
     [authentication authorizeRequest:request];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *err) {
         if (data) {
             [self.prefPane updateCredentials:[data yajl_JSON]];
+        } else {
+            [self.prefPane updateCredentials:@{@"name": [NSString stringWithFormat:@"[ERROR]: %@",[err localizedDescription]]}];
         }
     }];
 }
