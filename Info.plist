@@ -132,13 +132,6 @@
 			<true/>
 		</dict>
 	</dict>
-	<key>QSDefaults</key>
-	<dict>
-		<key>QSTwitUserName</key>
-		<string></string>
-		<key>QSTwitUserPassword</key>
-		<string></string>
-	</dict>
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
@@ -221,6 +214,11 @@
 			<key>resource</key>
 			<string>QSTwit.icns</string>
 		</dict>
+	</dict>
+	<key>QSRequirements</key>
+	<dict>
+		<key>version</key>
+		<string>4000</string>
 	</dict>
 </dict>
 </plist>
