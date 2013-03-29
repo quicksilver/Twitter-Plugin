@@ -21,6 +21,8 @@
 
 -(NSString *)twitterUsernameForContact:(QSObject *)person {
     NSArray *people = nil;
+    /* the QSObject (ContactHandling) protocol (from the Contacts plugin) is not public so -[QSObject ABPerson] throws a warning on build.
+     This code can *only* be reached if the Contacts plugin is installed though (since it's the only way ABPeopleUIDsPboardType type objects can exist in QS */
     ABPerson *pers = [person ABPerson];
     if ([NSApplication isMountainLion]) {
         people = [pers linkedPeople];
