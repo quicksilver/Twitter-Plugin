@@ -49,8 +49,11 @@
         }];
         return [contacts objectsAtIndexes:ind];
     }
-    if ([action isEqualToString:kDirectMessageAction] || [action isEqualToString:kSendMessageAction]) {
+    if ([action isEqualToString:kDirectMessageAction]) {
         return [NSArray arrayWithObject:[QSObject textProxyObjectWithDefaultValue:@"Direct Message…"]];
+    }
+    if ([action isEqualToString:kSendMessageAction]) {
+        return [NSArray arrayWithObject:[QSObject textProxyObjectWithDefaultValue:@"Send Message…"]];
     }
     return nil;
 }
