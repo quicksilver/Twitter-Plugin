@@ -145,9 +145,7 @@
 		<string>Posts a Tweet to your twitter account</string>
 		<key>icon</key>
 		<string>QSTwit</string>
-		<key>qsversion</key>
-		<string>β56a7</string>
-		<key>relatedBundles </key>
+		<key>relatedBundles</key>
 		<array>
 			<string>com.twitter.twitter-mac</string>
 			<string>com.iconfactory.Twitterrific</string>
