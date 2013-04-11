@@ -13,14 +13,24 @@
 @implementation QSTwitterAction
 
 -(NSArray*)validActionsForDirectObject:(QSObject *)dObject indirectObject:(QSObject *)iObject {
-    if ([self twitterUsernameForContact:dObject] != nil) {
+    if ([dObject count] == 1 && [self twitterUsernameForContact:dObject] != nil) {
         return @[kDirectMessageAction, kSendMessageAction];
     }
     return nil;
 }
 
 -(NSString *)twitterUsernameForContact:(QSObject *)person {
+    NSString *usr = nil;
+    if ([[person primaryType] isEqualToString:NSStringPboardType]) {
+        NSString *usr = [person primaryObject];
+        if ([usr hasPrefix:@"@"]) {
+            usr = [usr substringFromIndex:1];
+        }
+    }
+    
     NSArray *people = nil;
+    /* the QSObject (ContactHandling) protocol (from the Contacts plugin) is not public so -[QSObject ABPerson] throws a warning on build.
+     This code can *only* be reached if the Contacts plugin is installed though (since it's the only way ABPeopleUIDsPboardType type objects can exist in QS */
     ABPerson *pers = [person ABPerson];
     if ([NSApplication isMountainLion]) {
         people = [pers linkedPeople];
@@ -28,13 +38,20 @@
         people = @[pers];
     }
     for (ABPerson *p in people) {
+        if (usr) {
+            break;
+        }
         ABMultiValue *ims = [p valueForProperty:kABSocialProfileProperty];
         for (NSUInteger i = 0; i < [ims count]; i++) {
             NSDictionary *serv = [ims valueAtIndex:i];
             if ([[serv objectForKey:kABSocialProfileServiceKey] isEqualToString:kABSocialProfileServiceTwitter]) {
-                return [serv objectForKey:kABSocialProfileUsernameKey];
+                usr = [serv objectForKey:kABSocialProfileUsernameKey];
+                break;
             }
         }
+    }
+    if (!usr || [usr length] == 0) {
+        [[QSTwitterUtil sharedInstance] twitterNotify:NSLocalizedStringFromTableInBundle(@"Invalid Twitter username", nil, [NSBundle bundleForClass:[self class]], @"Invalid username message")];
     }
     return nil;
 }
@@ -47,8 +64,11 @@
         }];
         return [contacts objectsAtIndexes:ind];
     }
-    if ([action isEqualToString:kDirectMessageAction] || [action isEqualToString:kSendMessageAction]) {
+    if ([action isEqualToString:kDirectMessageAction]) {
         return [NSArray arrayWithObject:[QSObject textProxyObjectWithDefaultValue:@"Direct Message…"]];
+    }
+    if ([action isEqualToString:kSendMessageAction]) {
+        return [NSArray arrayWithObject:[QSObject textProxyObjectWithDefaultValue:@"Send Message…"]];
     }
     return nil;
 }
@@ -72,6 +92,9 @@
 
 -(QSObject *)sendDirectMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
     NSString *username = [self twitterUsernameForContact:iObject];
+    if (!username) {
+        return nil;
+    }
     NSString *message = [dObject stringValue];
     
     if ([self messageIsTooLong:message]) {
@@ -82,6 +105,9 @@
 
 -(QSObject*)sendMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
     NSString *username = [self twitterUsernameForContact:iObject];
+    if (!username) {
+        return nil;
+    }
     NSString *message = [NSString stringWithFormat:@"@%@ %@",username,[dObject stringValue]];
     if ([self messageIsTooLong:message]) {
         return [QSObject textProxyObjectWithDefaultValue:[dObject stringValue]];

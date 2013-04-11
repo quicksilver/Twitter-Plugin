@@ -38,7 +38,7 @@
 -(void)updateCredentials:(NSDictionary *)credentials {
     NSString *name = nil;
     if (credentials) {
-        name = [NSString stringWithFormat:@"%@%@",[credentials objectForKey:@"name"],[credentials objectForKey:@"screen_name"] ? [NSString stringWithFormat:@" (%@)",[credentials objectForKey:@"screen_name"]] : @""];
+        name = [NSString stringWithFormat:@"%@%@",[credentials objectForKey:@"name"],[credentials objectForKey:@"screen_name"] ? [NSString stringWithFormat:@" (@%@)",[credentials objectForKey:@"screen_name"]] : @""];
     }
     
     [usr setStringValue:(name != nil ? name : @"")];
