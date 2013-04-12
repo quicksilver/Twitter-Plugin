@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>91</string>
+	<string>94</string>
 	<key>NSPrincipalClass</key>
 	<string>QSTwitterUtil</string>
 	<key>QSActions</key>
@@ -135,7 +135,7 @@
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
-		<string>Masato Igarashi</string>
+		<string>Patrick Robertson</string>
 		<key>categories</key>
 		<array>
 			<string>Applications</string>
