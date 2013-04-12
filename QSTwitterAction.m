@@ -50,10 +50,7 @@
             }
         }
     }
-    if (!usr || [usr length] == 0) {
-        [[QSTwitterUtil sharedInstance] twitterNotify:NSLocalizedStringFromTableInBundle(@"Invalid Twitter username", nil, [NSBundle bundleForClass:[self class]], @"Invalid username message")];
-    }
-    return nil;
+    return usr;
 }
 
 -(NSArray *)validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)dObject {
@@ -92,7 +89,8 @@
 
 -(QSObject *)sendDirectMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
     NSString *username = [self twitterUsernameForContact:iObject];
-    if (!username) {
+    if (!username || [username length] == 0) {
+        [[QSTwitterUtil sharedInstance] twitterNotify:NSLocalizedStringFromTableInBundle(@"Invalid Twitter username", nil, [NSBundle bundleForClass:[self class]], @"Invalid username message")];
         return nil;
     }
     NSString *message = [dObject stringValue];
@@ -105,7 +103,8 @@
 
 -(QSObject*)sendMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
     NSString *username = [self twitterUsernameForContact:iObject];
-    if (!username) {
+    if (!username || [username length] == 0) {
+        [[QSTwitterUtil sharedInstance] twitterNotify:NSLocalizedStringFromTableInBundle(@"Invalid Twitter username", nil, [NSBundle bundleForClass:[self class]], @"Invalid username message")];
         return nil;
     }
     NSString *message = [NSString stringWithFormat:@"@%@ %@",username,[dObject stringValue]];
