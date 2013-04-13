@@ -29,6 +29,7 @@
 		CDB3CD1516FD61CE00DF06BF /* GTMMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0C16FD61CD00DF06BF /* GTMMIMEDocument.m */; };
 		CDB3CD1616FD61CE00DF06BF /* GTMReadMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0E16FD61CE00DF06BF /* GTMReadMonitorInputStream.m */; };
 		CDB3CD1816FDD79800DF06BF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
+		CDB497CE1718E49C0055F0C4 /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
 		CDE38B231702ED2D007A6BC1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE38B221702ED2D007A6BC1 /* AddressBook.framework */; };
 		CDE38B241702ED45007A6BC1 /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3C07F9ACD90056051D /* QSCore.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CDB497CE1718E49C0055F0C4 /* YAJL.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +352,7 @@
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-bundle";
 				PRODUCT_NAME = QSTwitter;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = qsplugin;
 			};
 			name = Debug;
@@ -368,6 +371,7 @@
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-bundle";
 				PRODUCT_NAME = QSTwitter;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = qsplugin;
 			};
 			name = Release;

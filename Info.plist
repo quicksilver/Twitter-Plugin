@@ -19,9 +19,9 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>97</string>
+	<string>9A</string>
 	<key>NSPrincipalClass</key>
 	<string>QSTwitterUtil</string>
 	<key>QSActions</key>
