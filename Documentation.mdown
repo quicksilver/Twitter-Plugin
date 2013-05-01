@@ -17,11 +17,11 @@ Some actions require a contact to send a direct message/message to. These action
 
 **Send Tweet**
 
-The 'Send Tweet' action takes text in Quicksilver's 1st pane and posts a tweet directly to Twitter
+The 'Tweet' action takes text in Quicksilver's 1st pane and posts a tweet directly to Twitter
 
 **Send Tweet… / Send Tweet To…**
 
-Use the 'Send Tweet…' action to send a contact selected in Quicksilver's 1st pane (either a contact from your Contacts list or a username entered as text) the text entered in Quicksilver's 3rd pane. The 'Send Tweet To…' action works in reverse, taking text in Quicksilver's 1st pane and a contact in Quicksilver's 3rd pane.
+Use the 'Tweet…' action to send a contact selected in Quicksilver's 1st pane (either a contact from your Contacts list or a username entered as text) the text entered in Quicksilver's 3rd pane. The 'Send Tweet To…' action works in reverse, taking text in Quicksilver's 1st pane and a contact in Quicksilver's 3rd pane.
 
 **Send Direct Message… / Send Direct Message To…**
 
