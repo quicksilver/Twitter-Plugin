@@ -22,12 +22,14 @@
 -(NSString *)twitterUsernameForContact:(QSObject *)person {
     NSString *usr = nil;
     if ([[person primaryType] isEqualToString:NSStringPboardType]) {
-        NSString *usr = [person primaryObject];
+        usr = [person primaryObject];
         if ([usr hasPrefix:@"@"]) {
             usr = [usr substringFromIndex:1];
         }
     }
-    
+    if (usr) {
+        return usr;
+    }
     NSArray *people = nil;
     /* the QSObject (ContactHandling) protocol (from the Contacts plugin) is not public so -[QSObject ABPerson] throws a warning on build.
      This code can *only* be reached if the Contacts plugin is installed though (since it's the only way ABPeopleUIDsPboardType type objects can exist in QS */
