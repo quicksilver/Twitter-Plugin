@@ -83,18 +83,20 @@
     message = (NSString*) CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)message, NULL,CFSTR(":/?#[]@!$&’'()*+,;=."), kCFStringEncodingUTF8);
     [request setHTTPBody:[[NSString stringWithFormat:@"%@%@=%@", user ? [NSString stringWithFormat:@"screen_name=%@&", user] : @"" , user ? @"text" : @"status", message] dataUsingEncoding:NSUTF8StringEncoding]];
     [authentication authorizeRequest:request];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
-        if (err != nil) {
-            [self twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"[Error] %@", nil, [NSBundle bundleForClass:[self class]], @"error sending tweet message"), [err localizedDescription]]];
-        } else {
-            NSDictionary *response = [data yajl_JSON];
-            if ([response valueForKey:@"text"]) {
-                [self twitterNotify:NSLocalizedStringFromTableInBundle(@"Tweet sent successfully", nil, [NSBundle bundleForClass:[self class]], nil)];
+    runOnMainQueueSync(^{
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
+            if (err != nil) {
+                [self twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"[Error] %@", nil, [NSBundle bundleForClass:[self class]], @"error sending tweet message"), [err localizedDescription]]];
             } else {
-                [self twitterNotify:[NSString stringWithFormat:@"[ERROR] %@",[response valueForKey:@"error"]]];
+                NSDictionary *response = [data yajl_JSON];
+                if ([response valueForKey:@"text"]) {
+                    [self twitterNotify:NSLocalizedStringFromTableInBundle(@"Tweet sent successfully", nil, [NSBundle bundleForClass:[self class]], nil)];
+                } else {
+                    [self twitterNotify:[NSString stringWithFormat:@"[ERROR] %@",[response valueForKey:@"error"]]];
+                }
             }
-        }
-    }];
+        }];
+    });
     return nil;
 
 }
@@ -153,13 +155,15 @@
 -(void)getCredentials {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:kTwitterUserCredURL];
     [authentication authorizeRequest:request];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *err) {
-        if (data) {
-            [self.prefPane updateCredentials:[data yajl_JSON]];
-        } else {
-            [self.prefPane updateCredentials:@{@"name": [NSString stringWithFormat:@"[ERROR]: %@",[err localizedDescription]]}];
-        }
-    }];
+    runOnMainQueueSync(^{
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *err) {
+            if (data) {
+                [self.prefPane updateCredentials:[data yajl_JSON]];
+            } else {
+                [self.prefPane updateCredentials:@{@"name": [NSString stringWithFormat:@"[ERROR]: %@",[err localizedDescription]]}];
+            }
+        }];
+    });
 }
 
 - (BOOL)isSignedIn {
