@@ -6,8 +6,6 @@
 //
 
 #import "TwitterSource.h"
-#import <QSCore/QSObject.h>
-
 
 @implementation TwitterSource
 - (BOOL)indexIsValidFromDate:(NSDate *)indexDate forEntry:(NSDictionary *)theEntry{

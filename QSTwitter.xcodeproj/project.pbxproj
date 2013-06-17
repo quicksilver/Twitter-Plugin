@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		355272DD10E33BD600194344 /* QSTwit.icns in Resources */ = {isa = PBXBuildFile; fileRef = 355272DC10E33BD600194344 /* QSTwit.icns */; };
+		35857B6810E213AB0054319B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35857B6710E213AB0054319B /* SystemConfiguration.framework */; };
+		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
+		BBF5817C0B1D9D84003CFF55 /* QSTwitterAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF5817B0B1D9D84003CFF55 /* QSTwitterAction.m */; };
+		CDB3CCC916FD4E8D00DF06BF /* QSTwitterPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CCC816FD4E8D00DF06BF /* QSTwitterPrefPane.m */; };
+		CDB3CCE416FD58A600DF06BF /* QSInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB3CCE316FD58A600DF06BF /* QSInterface.framework */; };
+		CDB3CCE716FD59B800DF06BF /* QSTwitterPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB3CCE616FD59B800DF06BF /* QSTwitterPrefPane.xib */; };
+		CDB3CCF716FD5EA100DF06BF /* GTMOAuthAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CCF016FD5EA100DF06BF /* GTMOAuthAuthentication.m */; };
+		CDB3CCF816FD5EA100DF06BF /* GTMOAuthSignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CCF216FD5EA100DF06BF /* GTMOAuthSignIn.m */; };
+		CDB3CCF916FD5EA100DF06BF /* GTMOAuthWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB3CCF316FD5EA100DF06BF /* GTMOAuthWindow.xib */; };
+		CDB3CCFA16FD5EA100DF06BF /* GTMOAuthWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CCF516FD5EA100DF06BF /* GTMOAuthWindowController.m */; };
+		CDB3CCFB16FD5EB600DF06BF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB3CCDD16FD56E800DF06BF /* Security.framework */; };
+		CDB3CCFE16FD5EE000DF06BF /* QSTwitterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CCFD16FD5EE000DF06BF /* QSTwitterUtil.m */; };
+		CDB3CD0F16FD61CE00DF06BF /* GTMGatherInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0016FD61CD00DF06BF /* GTMGatherInputStream.m */; };
+		CDB3CD1016FD61CE00DF06BF /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0216FD61CD00DF06BF /* GTMHTTPFetcher.m */; };
+		CDB3CD1116FD61CE00DF06BF /* GTMHTTPFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0416FD61CD00DF06BF /* GTMHTTPFetcherLogging.m */; };
+		CDB3CD1216FD61CE00DF06BF /* GTMHTTPFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0616FD61CD00DF06BF /* GTMHTTPFetcherService.m */; };
+		CDB3CD1316FD61CE00DF06BF /* GTMHTTPFetchHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0816FD61CD00DF06BF /* GTMHTTPFetchHistory.m */; };
+		CDB3CD1416FD61CE00DF06BF /* GTMHTTPUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0A16FD61CD00DF06BF /* GTMHTTPUploadFetcher.m */; };
+		CDB3CD1516FD61CE00DF06BF /* GTMMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0C16FD61CD00DF06BF /* GTMMIMEDocument.m */; };
+		CDB3CD1616FD61CE00DF06BF /* GTMReadMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0E16FD61CE00DF06BF /* GTMReadMonitorInputStream.m */; };
+		CDB3CD1816FDD79800DF06BF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
+		CDB485A8176B514B0093B282 /* QSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3E07F9ACD90056051D /* QSFoundation.framework */; };
+		CDB497CE1718E49C0055F0C4 /* YAJL.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
+		CDE38B231702ED2D007A6BC1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE38B221702ED2D007A6BC1 /* AddressBook.framework */; };
+		CDE38B241702ED45007A6BC1 /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3C07F9ACD90056051D /* QSCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDB3CCE816FD5A7D00DF06BF /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CDB497CE1718E49C0055F0C4 /* YAJL.framework in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		154F2D561374451300AA8175 /* ConsumerKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerKey.h; sourceTree = "<group>"; };
+		32DBCF980370C29C00C91783 /* QSTwit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTwit_Prefix.pch; sourceTree = "<group>"; };
+		355272DC10E33BD600194344 /* QSTwit.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = QSTwit.icns; sourceTree = "<group>"; };
+		35857B6510E213880054319B /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		35857B6710E213AB0054319B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		35857D0210E21BE70054319B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7F35FF3C07F9ACD90056051D /* QSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F35FF3E07F9ACD90056051D /* QSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1AC9740486D14A00FE50C9 /* QSTwitter.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QSTwitter.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBF5817A0B1D9D84003CFF55 /* QSTwitterAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTwitterAction.h; sourceTree = "<group>"; };
+		BBF5817B0B1D9D84003CFF55 /* QSTwitterAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSTwitterAction.m; sourceTree = "<group>"; };
+		CDB3CCC716FD4E8D00DF06BF /* QSTwitterPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTwitterPrefPane.h; sourceTree = "<group>"; };
+		CDB3CCC816FD4E8D00DF06BF /* QSTwitterPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSTwitterPrefPane.m; sourceTree = "<group>"; };
+		CDB3CCCC16FD50AD00DF06BF /* QSTwitterDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTwitterDefines.h; sourceTree = "<group>"; };
+		CDB3CCDD16FD56E800DF06BF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CDB3CCE316FD58A600DF06BF /* QSInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QSInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDB3CCE616FD59B800DF06BF /* QSTwitterPrefPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSTwitterPrefPane.xib; sourceTree = "<group>"; };
+		CDB3CCEF16FD5EA100DF06BF /* GTMOAuthAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuthAuthentication.h; sourceTree = "<group>"; };
+		CDB3CCF016FD5EA100DF06BF /* GTMOAuthAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuthAuthentication.m; sourceTree = "<group>"; };
+		CDB3CCF116FD5EA100DF06BF /* GTMOAuthSignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuthSignIn.h; sourceTree = "<group>"; };
+		CDB3CCF216FD5EA100DF06BF /* GTMOAuthSignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuthSignIn.m; sourceTree = "<group>"; };
+		CDB3CCF316FD5EA100DF06BF /* GTMOAuthWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuthWindow.xib; sourceTree = "<group>"; };
+		CDB3CCF416FD5EA100DF06BF /* GTMOAuthWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuthWindowController.h; sourceTree = "<group>"; };
+		CDB3CCF516FD5EA100DF06BF /* GTMOAuthWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuthWindowController.m; sourceTree = "<group>"; };
+		CDB3CCFC16FD5EE000DF06BF /* QSTwitterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTwitterUtil.h; sourceTree = "<group>"; };
+		CDB3CCFD16FD5EE000DF06BF /* QSTwitterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSTwitterUtil.m; sourceTree = "<group>"; };
+		CDB3CCFF16FD61CD00DF06BF /* GTMGatherInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMGatherInputStream.h; path = HTTPFetcher/GTMGatherInputStream.h; sourceTree = "<group>"; };
+		CDB3CD0016FD61CD00DF06BF /* GTMGatherInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMGatherInputStream.m; path = HTTPFetcher/GTMGatherInputStream.m; sourceTree = "<group>"; };
+		CDB3CD0116FD61CD00DF06BF /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetcher.h; path = HTTPFetcher/GTMHTTPFetcher.h; sourceTree = "<group>"; };
+		CDB3CD0216FD61CD00DF06BF /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetcher.m; path = HTTPFetcher/GTMHTTPFetcher.m; sourceTree = "<group>"; };
+		CDB3CD0316FD61CD00DF06BF /* GTMHTTPFetcherLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetcherLogging.h; path = HTTPFetcher/GTMHTTPFetcherLogging.h; sourceTree = "<group>"; };
+		CDB3CD0416FD61CD00DF06BF /* GTMHTTPFetcherLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetcherLogging.m; path = HTTPFetcher/GTMHTTPFetcherLogging.m; sourceTree = "<group>"; };
+		CDB3CD0516FD61CD00DF06BF /* GTMHTTPFetcherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetcherService.h; path = HTTPFetcher/GTMHTTPFetcherService.h; sourceTree = "<group>"; };
+		CDB3CD0616FD61CD00DF06BF /* GTMHTTPFetcherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetcherService.m; path = HTTPFetcher/GTMHTTPFetcherService.m; sourceTree = "<group>"; };
+		CDB3CD0716FD61CD00DF06BF /* GTMHTTPFetchHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetchHistory.h; path = HTTPFetcher/GTMHTTPFetchHistory.h; sourceTree = "<group>"; };
+		CDB3CD0816FD61CD00DF06BF /* GTMHTTPFetchHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetchHistory.m; path = HTTPFetcher/GTMHTTPFetchHistory.m; sourceTree = "<group>"; };
+		CDB3CD0916FD61CD00DF06BF /* GTMHTTPUploadFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPUploadFetcher.h; path = HTTPFetcher/GTMHTTPUploadFetcher.h; sourceTree = "<group>"; };
+		CDB3CD0A16FD61CD00DF06BF /* GTMHTTPUploadFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPUploadFetcher.m; path = HTTPFetcher/GTMHTTPUploadFetcher.m; sourceTree = "<group>"; };
+		CDB3CD0B16FD61CD00DF06BF /* GTMMIMEDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMMIMEDocument.h; path = HTTPFetcher/GTMMIMEDocument.h; sourceTree = "<group>"; };
+		CDB3CD0C16FD61CD00DF06BF /* GTMMIMEDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMMIMEDocument.m; path = HTTPFetcher/GTMMIMEDocument.m; sourceTree = "<group>"; };
+		CDB3CD0D16FD61CD00DF06BF /* GTMReadMonitorInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMReadMonitorInputStream.h; path = HTTPFetcher/GTMReadMonitorInputStream.h; sourceTree = "<group>"; };
+		CDB3CD0E16FD61CE00DF06BF /* GTMReadMonitorInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMReadMonitorInputStream.m; path = HTTPFetcher/GTMReadMonitorInputStream.m; sourceTree = "<group>"; };
+		CDB3CD1716FDD79800DF06BF /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
+		CDE38B171702DFB5007A6BC1 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		CDE38B181702DFB5007A6BC1 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		CDE38B191702DFB5007A6BC1 /* Developer.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Developer.xcconfig; sourceTree = "<group>"; };
+		CDE38B1A1702DFB5007A6BC1 /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
+		CDE38B1B1702DFB5007A6BC1 /* Quicksilver.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
+		CDE38B1C1702DFB5007A6BC1 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		CDE38B221702ED2D007A6BC1 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		DD92D38A0106425D02CA0E72 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D1AC96E0486D14A00FE50C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDE38B231702ED2D007A6BC1 /* AddressBook.framework in Frameworks */,
+				8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */,
+				35857B6810E213AB0054319B /* SystemConfiguration.framework in Frameworks */,
+				CDB3CCFB16FD5EB600DF06BF /* Security.framework in Frameworks */,
+				CDB3CCE416FD58A600DF06BF /* QSInterface.framework in Frameworks */,
+				CDB485A8176B514B0093B282 /* QSFoundation.framework in Frameworks */,
+				CDE38B241702ED45007A6BC1 /* QSCore.framework in Frameworks */,
+				CDB3CD1816FDD79800DF06BF /* YAJL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0259C574FE90428111CA0C5A /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				CDE38B161702DFB5007A6BC1 /* Configuration */,
+				CDB3CCEC16FD5EA100DF06BF /* GTM-OAuth */,
+				32DBCF9E0370C38000C91783 /* Classes */,
+				32DBCF9F0370C38200C91783 /* Other Sources */,
+				0259C582FE90428111CA0C5A /* Resources */,
+				1ED78706FE9D4A0611CA0C5A /* Products */,
+				2E58F364FFB232C311CA0CBA /* Frameworks */,
+				35857D0210E21BE70054319B /* Foundation.framework */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
+		0259C582FE90428111CA0C5A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CDB3CCE616FD59B800DF06BF /* QSTwitterPrefPane.xib */,
+				355272DC10E33BD600194344 /* QSTwit.icns */,
+				8D1AC9730486D14A00FE50C9 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1ED78706FE9D4A0611CA0C5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1AC9740486D14A00FE50C9 /* QSTwitter.qsplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E58F364FFB232C311CA0CBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDE38B221702ED2D007A6BC1 /* AddressBook.framework */,
+				CDB3CD1716FDD79800DF06BF /* YAJL.framework */,
+				CDB3CCE316FD58A600DF06BF /* QSInterface.framework */,
+				CDB3CCDD16FD56E800DF06BF /* Security.framework */,
+				35857B6510E213880054319B /* CoreServices.framework */,
+				35857B6710E213AB0054319B /* SystemConfiguration.framework */,
+				DD92D38A0106425D02CA0E72 /* Cocoa.framework */,
+				7F35FF3C07F9ACD90056051D /* QSCore.framework */,
+				7F35FF3E07F9ACD90056051D /* QSFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32DBCF9E0370C38000C91783 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BBF5817A0B1D9D84003CFF55 /* QSTwitterAction.h */,
+				BBF5817B0B1D9D84003CFF55 /* QSTwitterAction.m */,
+				154F2D561374451300AA8175 /* ConsumerKey.h */,
+				CDB3CCFC16FD5EE000DF06BF /* QSTwitterUtil.h */,
+				CDB3CCFD16FD5EE000DF06BF /* QSTwitterUtil.m */,
+				CDB3CCCC16FD50AD00DF06BF /* QSTwitterDefines.h */,
+				CDB3CCC716FD4E8D00DF06BF /* QSTwitterPrefPane.h */,
+				CDB3CCC816FD4E8D00DF06BF /* QSTwitterPrefPane.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32DBCF9F0370C38200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF980370C29C00C91783 /* QSTwit_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		CDB3CCEC16FD5EA100DF06BF /* GTM-OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				CDB3CCFF16FD61CD00DF06BF /* GTMGatherInputStream.h */,
+				CDB3CD0016FD61CD00DF06BF /* GTMGatherInputStream.m */,
+				CDB3CD0116FD61CD00DF06BF /* GTMHTTPFetcher.h */,
+				CDB3CD0216FD61CD00DF06BF /* GTMHTTPFetcher.m */,
+				CDB3CD0316FD61CD00DF06BF /* GTMHTTPFetcherLogging.h */,
+				CDB3CD0416FD61CD00DF06BF /* GTMHTTPFetcherLogging.m */,
+				CDB3CD0516FD61CD00DF06BF /* GTMHTTPFetcherService.h */,
+				CDB3CD0616FD61CD00DF06BF /* GTMHTTPFetcherService.m */,
+				CDB3CD0716FD61CD00DF06BF /* GTMHTTPFetchHistory.h */,
+				CDB3CD0816FD61CD00DF06BF /* GTMHTTPFetchHistory.m */,
+				CDB3CD0916FD61CD00DF06BF /* GTMHTTPUploadFetcher.h */,
+				CDB3CD0A16FD61CD00DF06BF /* GTMHTTPUploadFetcher.m */,
+				CDB3CD0B16FD61CD00DF06BF /* GTMMIMEDocument.h */,
+				CDB3CD0C16FD61CD00DF06BF /* GTMMIMEDocument.m */,
+				CDB3CD0D16FD61CD00DF06BF /* GTMReadMonitorInputStream.h */,
+				CDB3CD0E16FD61CE00DF06BF /* GTMReadMonitorInputStream.m */,
+				CDB3CCEF16FD5EA100DF06BF /* GTMOAuthAuthentication.h */,
+				CDB3CCF016FD5EA100DF06BF /* GTMOAuthAuthentication.m */,
+				CDB3CCF116FD5EA100DF06BF /* GTMOAuthSignIn.h */,
+				CDB3CCF216FD5EA100DF06BF /* GTMOAuthSignIn.m */,
+				CDB3CCF316FD5EA100DF06BF /* GTMOAuthWindow.xib */,
+				CDB3CCF416FD5EA100DF06BF /* GTMOAuthWindowController.h */,
+				CDB3CCF516FD5EA100DF06BF /* GTMOAuthWindowController.m */,
+			);
+			path = "GTM-OAuth";
+			sourceTree = "<group>";
+		};
+		CDE38B161702DFB5007A6BC1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CDE38B171702DFB5007A6BC1 /* Common.xcconfig */,
+				CDE38B181702DFB5007A6BC1 /* Debug.xcconfig */,
+				CDE38B191702DFB5007A6BC1 /* Developer.xcconfig */,
+				CDE38B1A1702DFB5007A6BC1 /* QSPlugIn.xcconfig */,
+				CDE38B1B1702DFB5007A6BC1 /* Quicksilver.pch */,
+				CDE38B1C1702DFB5007A6BC1 /* Release.xcconfig */,
+			);
+			name = Configuration;
+			path = ../../../../../../private/tmp/QS/Configuration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1AC9600486D14A00FE50C9 /* QSTwit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "QSTwit" */;
+			buildPhases = (
+				E1022B2806B3475D00299BEC /* Update Version and Documentation */,
+				8D1AC9660486D14A00FE50C9 /* Resources */,
+				8D1AC96A0486D14A00FE50C9 /* Sources */,
+				CDB3CCE816FD5A7D00DF06BF /* Copy Files */,
+				8D1AC96E0486D14A00FE50C9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QSTwit;
+			productInstallPath = "$(HOME)/Developer/Palettes";
+			productName = Twitter;
+			productReference = 8D1AC9740486D14A00FE50C9 /* QSTwitter.qsplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0259C573FE90428111CA0C5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "QSTwitter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0259C574FE90428111CA0C5A /* Twitter */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1AC9600486D14A00FE50C9 /* QSTwit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1AC9660486D14A00FE50C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				355272DD10E33BD600194344 /* QSTwit.icns in Resources */,
+				CDB3CCE716FD59B800DF06BF /* QSTwitterPrefPane.xib in Resources */,
+				CDB3CCF916FD5EA100DF06BF /* GTMOAuthWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E1022B2806B3475D00299BEC /* Update Version and Documentation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update Version and Documentation";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"$QS_BUILD_ROOT/Tools/bltrversion\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D1AC96A0486D14A00FE50C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBF5817C0B1D9D84003CFF55 /* QSTwitterAction.m in Sources */,
+				CDB3CCC916FD4E8D00DF06BF /* QSTwitterPrefPane.m in Sources */,
+				CDB3CCF716FD5EA100DF06BF /* GTMOAuthAuthentication.m in Sources */,
+				CDB3CCF816FD5EA100DF06BF /* GTMOAuthSignIn.m in Sources */,
+				CDB3CCFA16FD5EA100DF06BF /* GTMOAuthWindowController.m in Sources */,
+				CDB3CCFE16FD5EE000DF06BF /* QSTwitterUtil.m in Sources */,
+				CDB3CD0F16FD61CE00DF06BF /* GTMGatherInputStream.m in Sources */,
+				CDB3CD1016FD61CE00DF06BF /* GTMHTTPFetcher.m in Sources */,
+				CDB3CD1116FD61CE00DF06BF /* GTMHTTPFetcherLogging.m in Sources */,
+				CDB3CD1216FD61CE00DF06BF /* GTMHTTPFetcherService.m in Sources */,
+				CDB3CD1316FD61CE00DF06BF /* GTMHTTPFetchHistory.m in Sources */,
+				CDB3CD1416FD61CE00DF06BF /* GTMHTTPUploadFetcher.m in Sources */,
+				CDB3CD1516FD61CE00DF06BF /* GTMMIMEDocument.m in Sources */,
+				CDB3CD1616FD61CE00DF06BF /* GTMReadMonitorInputStream.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7F6B3EEC085CE8DF000735A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDE38B1A1702DFB5007A6BC1 /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					/System/Library/PrivateFrameworks,
+					"$(BUILT_PRODUCTS_DIR)",
+					"$(CONFIGURATION_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				INFOPLIST_FILE = Info.plist;
+				OTHER_LDFLAGS = "-bundle";
+				PRODUCT_NAME = QSTwitter;
+				WRAPPER_EXTENSION = qsplugin;
+			};
+			name = Debug;
+		};
+		7F6B3EED085CE8DF000735A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDE38B1A1702DFB5007A6BC1 /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					/System/Library/PrivateFrameworks,
+					"$(BUILT_PRODUCTS_DIR)",
+					"$(CONFIGURATION_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				INFOPLIST_FILE = Info.plist;
+				OTHER_LDFLAGS = "-bundle";
+				PRODUCT_NAME = QSTwitter;
+				WRAPPER_EXTENSION = qsplugin;
+			};
+			name = Release;
+		};
+		7F6B3EF0085CE8DF000735A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDE38B181702DFB5007A6BC1 /* Debug.xcconfig */;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+			};
+			name = Debug;
+		};
+		7F6B3EF1085CE8DF000735A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDE38B1C1702DFB5007A6BC1 /* Release.xcconfig */;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F6B3EEB085CE8DF000735A8 /* Build configuration list for PBXNativeTarget "QSTwit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F6B3EEC085CE8DF000735A8 /* Debug */,
+				7F6B3EED085CE8DF000735A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F6B3EEF085CE8DF000735A8 /* Build configuration list for PBXProject "QSTwitter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F6B3EF0085CE8DF000735A8 /* Debug */,
+				7F6B3EF1085CE8DF000735A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0259C573FE90428111CA0C5A /* Project object */;
+}
