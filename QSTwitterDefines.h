@@ -21,4 +21,4 @@
 #define kTwitterDMURL [NSURL URLWithString:@"https://api.twitter.com/1/direct_messages/new.json"]
 
 // Twitter *may* change this one day, who knows
-#define kMaxTweetLength 140
+#define kMaxTweetLength 280
