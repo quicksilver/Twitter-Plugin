@@ -29,18 +29,22 @@
 		CDB3CD1516FD61CE00DF06BF /* GTMMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0C16FD61CD00DF06BF /* GTMMIMEDocument.m */; };
 		CDB3CD1616FD61CE00DF06BF /* GTMReadMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0E16FD61CE00DF06BF /* GTMReadMonitorInputStream.m */; };
 		CDB3CD1816FDD79800DF06BF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
+		CDB485A8176B514B0093B282 /* QSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3E07F9ACD90056051D /* QSFoundation.framework */; };
+		CDB497CE1718E49C0055F0C4 /* YAJL.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
 		CDE38B231702ED2D007A6BC1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE38B221702ED2D007A6BC1 /* AddressBook.framework */; };
 		CDE38B241702ED45007A6BC1 /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3C07F9ACD90056051D /* QSCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CDB3CCE816FD5A7D00DF06BF /* CopyFiles */ = {
+		CDB3CCE816FD5A7D00DF06BF /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CDB497CE1718E49C0055F0C4 /* YAJL.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -110,6 +114,7 @@
 				35857B6810E213AB0054319B /* SystemConfiguration.framework in Frameworks */,
 				CDB3CCFB16FD5EB600DF06BF /* Security.framework in Frameworks */,
 				CDB3CCE416FD58A600DF06BF /* QSInterface.framework in Frameworks */,
+				CDB485A8176B514B0093B282 /* QSFoundation.framework in Frameworks */,
 				CDE38B241702ED45007A6BC1 /* QSCore.framework in Frameworks */,
 				CDB3CD1816FDD79800DF06BF /* YAJL.framework in Frameworks */,
 			);
@@ -244,8 +249,8 @@
 				E1022B2806B3475D00299BEC /* Update Version and Documentation */,
 				8D1AC9660486D14A00FE50C9 /* Resources */,
 				8D1AC96A0486D14A00FE50C9 /* Sources */,
+				CDB3CCE816FD5A7D00DF06BF /* Copy Files */,
 				8D1AC96E0486D14A00FE50C9 /* Frameworks */,
-				CDB3CCE816FD5A7D00DF06BF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -376,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDE38B181702DFB5007A6BC1 /* Debug.xcconfig */;
 			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 			};
 			name = Debug;
 		};
@@ -383,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDE38B1C1702DFB5007A6BC1 /* Release.xcconfig */;
 			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 			};
 			name = Release;
 		};

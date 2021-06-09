@@ -22,12 +22,14 @@
 -(NSString *)twitterUsernameForContact:(QSObject *)person {
     NSString *usr = nil;
     if ([[person primaryType] isEqualToString:NSStringPboardType]) {
-        NSString *usr = [person primaryObject];
+        usr = [person primaryObject];
         if ([usr hasPrefix:@"@"]) {
             usr = [usr substringFromIndex:1];
         }
     }
-    
+    if (usr) {
+        return usr;
+    }
     NSArray *people = nil;
     /* the QSObject (ContactHandling) protocol (from the Contacts plugin) is not public so -[QSObject ABPerson] throws a warning on build.
      This code can *only* be reached if the Contacts plugin is installed though (since it's the only way ABPeopleUIDsPboardType type objects can exist in QS */
@@ -50,10 +52,7 @@
             }
         }
     }
-    if (!usr || [usr length] == 0) {
-        [[QSTwitterUtil sharedInstance] twitterNotify:NSLocalizedStringFromTableInBundle(@"Invalid Twitter username", nil, [NSBundle bundleForClass:[self class]], @"Invalid username message")];
-    }
-    return nil;
+    return usr;
 }
 
 -(NSArray *)validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)dObject {
@@ -92,7 +91,8 @@
 
 -(QSObject *)sendDirectMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
     NSString *username = [self twitterUsernameForContact:iObject];
-    if (!username) {
+    if (!username || [username length] == 0) {
+        [[QSTwitterUtil sharedInstance] twitterNotify:NSLocalizedStringFromTableInBundle(@"Invalid Twitter username", nil, [NSBundle bundleForClass:[self class]], @"Invalid username message")];
         return nil;
     }
     NSString *message = [dObject stringValue];
@@ -105,7 +105,8 @@
 
 -(QSObject*)sendMessage:(QSObject *)dObject toContact:(QSObject *)iObject {
     NSString *username = [self twitterUsernameForContact:iObject];
-    if (!username) {
+    if (!username || [username length] == 0) {
+        [[QSTwitterUtil sharedInstance] twitterNotify:NSLocalizedStringFromTableInBundle(@"Invalid Twitter username", nil, [NSBundle bundleForClass:[self class]], @"Invalid username message")];
         return nil;
     }
     NSString *message = [NSString stringWithFormat:@"@%@ %@",username,[dObject stringValue]];

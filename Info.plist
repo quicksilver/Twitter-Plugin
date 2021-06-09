@@ -19,9 +19,9 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>1.0.3</string>
 	<key>CFBundleVersion</key>
-	<string>91</string>
+	<string>A6</string>
 	<key>NSPrincipalClass</key>
 	<string>QSTwitterUtil</string>
 	<key>QSActions</key>
@@ -135,7 +135,7 @@
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
-		<string>Masato Igarashi</string>
+		<string>Patrick Robertson</string>
 		<key>categories</key>
 		<array>
 			<string>Applications</string>
@@ -154,9 +154,9 @@ Your Twitter login details are stored securely in OS X's Keychain.app for access
 &lt;p&gt;Some actions require a contact to send a direct message/message to. These actions accept both text (e.g. in the form '@Twitter') or a contact from your Address Book (requires the Contacts plugin). In order to use contacts directly, you must ensure that your contacts have their Twitter username field set in Address Book.app / Contacts.app&lt;/p&gt;
 &lt;h4&gt;Actions&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Send Tweet&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The 'Send Tweet' action takes text in Quicksilver's 1st pane and posts a tweet directly to Twitter&lt;/p&gt;
+&lt;p&gt;The 'Tweet' action takes text in Quicksilver's 1st pane and posts a tweet directly to Twitter&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Send Tweet… / Send Tweet To…&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Use the 'Send Tweet…' action to send a contact selected in Quicksilver's 1st pane (either a contact from your Contacts list or a username entered as text) the text entered in Quicksilver's 3rd pane. The 'Send Tweet To…' action works in reverse, taking text in Quicksilver's 1st pane and a contact in Quicksilver's 3rd pane.&lt;/p&gt;
+&lt;p&gt;Use the 'Tweet…' action to send a contact selected in Quicksilver's 1st pane (either a contact from your Contacts list or a username entered as text) the text entered in Quicksilver's 3rd pane. The 'Send Tweet To…' action works in reverse, taking text in Quicksilver's 1st pane and a contact in Quicksilver's 3rd pane.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Send Direct Message… / Send Direct Message To…&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;'Send Direct Message…' can be used to send a contact (selected in Quicksilver's 1st pane) a direct message entered as text in Quicksilver's 3rd pane. The 'Send Direct Message To…' action works in reverse.&lt;/p&gt;</string>
 		<key>icon</key>
