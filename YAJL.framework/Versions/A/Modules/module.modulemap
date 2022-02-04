@@ -1,0 +1,6 @@
+framework module YAJL {
+  umbrella header "YAJL.h"
+
+  export *
+  module * { export * }
+}
