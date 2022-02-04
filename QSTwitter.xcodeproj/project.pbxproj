@@ -333,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDE38B1A1702DFB5007A6BC1 /* QSPlugIn.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					/System/Library/PrivateFrameworks,
 					"$(BUILT_PRODUCTS_DIR)",
@@ -351,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDE38B1A1702DFB5007A6BC1 /* QSPlugIn.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					/System/Library/PrivateFrameworks,
 					"$(BUILT_PRODUCTS_DIR)",
