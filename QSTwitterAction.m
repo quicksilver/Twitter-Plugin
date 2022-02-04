@@ -9,6 +9,8 @@
 #import "QSTwitterUtil.h"
 #import "QSTwitterDefines.h"
 #import <AddressBook/ABGlobals.h>
+#import <AddressBook/ABPerson.h>
+#import <AddressBook/ABMultiValue.h>
 
 @implementation QSTwitterAction
 

@@ -83,7 +83,7 @@
     message = (NSString*) CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)message, NULL,CFSTR(":/?#[]@!$&’'()*+,;=."), kCFStringEncodingUTF8);
     [request setHTTPBody:[[NSString stringWithFormat:@"%@%@=%@", user ? [NSString stringWithFormat:@"screen_name=%@&", user] : @"" , user ? @"text" : @"status", message] dataUsingEncoding:NSUTF8StringEncoding]];
     [authentication authorizeRequest:request];
-    runOnMainQueueSync(^{
+    QSGCDMainSync(^{
         [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
             if (err != nil) {
                 [self twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"[Error] %@", nil, [NSBundle bundleForClass:[self class]], @"error sending tweet message"), [err localizedDescription]]];
@@ -155,10 +155,10 @@
 -(void)getCredentials {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:kTwitterUserCredURL];
     [authentication authorizeRequest:request];
-    runOnMainQueueSync(^{
+    QSGCDMainSync(^{
         [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *err) {
             if (data) {
-                [self.prefPane updateCredentials:[data yajl_JSON]];
+				[self.prefPane updateCredentials:[data yajl_JSON]];
             } else {
                 [self.prefPane updateCredentials:@{@"name": [NSString stringWithFormat:@"[ERROR]: %@",[err localizedDescription]]}];
             }
