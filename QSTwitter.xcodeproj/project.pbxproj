@@ -28,9 +28,7 @@
 		CDB3CD1416FD61CE00DF06BF /* GTMHTTPUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0A16FD61CD00DF06BF /* GTMHTTPUploadFetcher.m */; };
 		CDB3CD1516FD61CE00DF06BF /* GTMMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0C16FD61CD00DF06BF /* GTMMIMEDocument.m */; };
 		CDB3CD1616FD61CE00DF06BF /* GTMReadMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3CD0E16FD61CE00DF06BF /* GTMReadMonitorInputStream.m */; };
-		CDB3CD1816FDD79800DF06BF /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
 		CDB485A8176B514B0093B282 /* QSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3E07F9ACD90056051D /* QSFoundation.framework */; };
-		CDB497CE1718E49C0055F0C4 /* YAJL.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = CDB3CD1716FDD79800DF06BF /* YAJL.framework */; };
 		CDE38B231702ED2D007A6BC1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE38B221702ED2D007A6BC1 /* AddressBook.framework */; };
 		CDE38B241702ED45007A6BC1 /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F35FF3C07F9ACD90056051D /* QSCore.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +40,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CDB497CE1718E49C0055F0C4 /* YAJL.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,7 +90,6 @@
 		CDB3CD0C16FD61CD00DF06BF /* GTMMIMEDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMMIMEDocument.m; path = HTTPFetcher/GTMMIMEDocument.m; sourceTree = "<group>"; };
 		CDB3CD0D16FD61CD00DF06BF /* GTMReadMonitorInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMReadMonitorInputStream.h; path = HTTPFetcher/GTMReadMonitorInputStream.h; sourceTree = "<group>"; };
 		CDB3CD0E16FD61CE00DF06BF /* GTMReadMonitorInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMReadMonitorInputStream.m; path = HTTPFetcher/GTMReadMonitorInputStream.m; sourceTree = "<group>"; };
-		CDB3CD1716FDD79800DF06BF /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
 		CDE38B171702DFB5007A6BC1 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		CDE38B181702DFB5007A6BC1 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CDE38B191702DFB5007A6BC1 /* Developer.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Developer.xcconfig; sourceTree = "<group>"; };
@@ -116,7 +112,6 @@
 				CDB3CCE416FD58A600DF06BF /* QSInterface.framework in Frameworks */,
 				CDB485A8176B514B0093B282 /* QSFoundation.framework in Frameworks */,
 				CDE38B241702ED45007A6BC1 /* QSCore.framework in Frameworks */,
-				CDB3CD1816FDD79800DF06BF /* YAJL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				CDE38B221702ED2D007A6BC1 /* AddressBook.framework */,
-				CDB3CD1716FDD79800DF06BF /* YAJL.framework */,
 				CDB3CCE316FD58A600DF06BF /* QSInterface.framework */,
 				CDB3CCDD16FD56E800DF06BF /* Security.framework */,
 				35857B6510E213880054319B /* CoreServices.framework */,
