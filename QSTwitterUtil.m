@@ -11,7 +11,6 @@
 #import "GTMOAuthAuthentication.h"
 #import "GTMOAuthWindowController.h"
 #import "QSTwitterDefines.h"
-#import <YAJL/YAJL.h>
 #import "QSTwitterPrefPane.h"
 
 @implementation QSTwitterUtil
@@ -87,14 +86,18 @@
         [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
             if (err != nil) {
                 [self twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"[Error] %@", nil, [NSBundle bundleForClass:[self class]], @"error sending tweet message"), [err localizedDescription]]];
-            } else {
-                NSDictionary *response = [data yajl_JSON];
-                if ([response valueForKey:@"text"]) {
-                    [self twitterNotify:NSLocalizedStringFromTableInBundle(@"Tweet sent successfully", nil, [NSBundle bundleForClass:[self class]], nil)];
-                } else {
-                    [self twitterNotify:[NSString stringWithFormat:@"[ERROR] %@",[response valueForKey:@"error"]]];
-                }
-            }
+				return;
+			}
+			NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+			if (err != nil) {
+				[self twitterNotify:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"[Error] %@", nil, [NSBundle bundleForClass:[self class]], @"error sending tweet message"), [err localizedDescription]]];
+				return;
+			}
+			if ([response valueForKey:@"text"]) {
+				[self twitterNotify:NSLocalizedStringFromTableInBundle(@"Tweet sent successfully", nil, [NSBundle bundleForClass:[self class]], nil)];
+			} else {
+				[self twitterNotify:[NSString stringWithFormat:@"[ERROR] %@",[response valueForKey:@"error"]]];
+			}
         }];
     });
     return nil;
@@ -158,10 +161,14 @@
     QSGCDMainSync(^{
         [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *err) {
             if (data) {
-				[self.prefPane updateCredentials:[data yajl_JSON]];
-            } else {
-                [self.prefPane updateCredentials:@{@"name": [NSString stringWithFormat:@"[ERROR]: %@",[err localizedDescription]]}];
+				NSDictionary *credentials = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+				if (err == nil) {
+					[self.prefPane updateCredentials:credentials];
+					return;
+				}
             }
+			// display the error
+			[self.prefPane updateCredentials:@{@"name": [NSString stringWithFormat:@"[ERROR]: %@",[err localizedDescription]]}];
         }];
     });
 }
